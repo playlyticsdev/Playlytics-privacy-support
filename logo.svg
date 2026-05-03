@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg"
-     xmlns:xlink="http://www.w3.org/1999/xlink"
-     viewBox="0 0 1024 1024" width="28" height="28" role="img" aria-label="Playlytics Logo">
-  <!-- WICHTIG: Absoluter Pfad zur PNG-Datei auf GitHub Pages -->
-  <image xlink:href="https://playlyticsdev.github.io/Playlytics-privacy-support/AppIcon.png"
-         x="0" y="0" width="1024" height="1024"
-         preserveAspectRatio="xMidYMid meet" />
-</svg>
