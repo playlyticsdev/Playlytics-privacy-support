@@ -7,42 +7,72 @@
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <header>
-    <h1>Support & FAQ</h1>
-    <p>Wir helfen dir gern weiter.</p>
+  <!-- Fixierter Header mit Branding -->
+  <header class="site-header">
+    <div class="container inner">
+      <a class="brand" href="./">
+        <!-- Ersetze logo.svg durch dein Logo/PNG -->
+        <img class="logo" src="./logo.svg" alt="Playlytics Logo" />
+        <span class="title">Playlytics</span>
+      </a>
+      <nav>
+        <a class="btn" href="./index.html"><span class="icon">🏠</span>Start</a>
+        <a class="btn" href="./privacy.html"><span class="icon">🛡️</span>Datenschutz</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section>
-      <h2>Kontakt</h2>
-      <p>Schreibe uns an: <a href="mailto:jbxfjxtwps@privaterelay.appleid.com">DevTeam</a></p>
-      <p>Bitte sende, wenn möglich, eine kurze Beschreibung des Problems und die App-Version.</p>
-    </section>
+  <!-- Hero-Bereich -->
+  <section class="hero">
+    <div class="container">
+      <div class="badge">Hilfe & Kontakt</div>
+      <h1>Support & FAQ</h1>
+      <p>Wir helfen dir gern weiter.</p>
+    </div>
+  </section>
 
-    <section>
-      <h2>Häufige Fragen</h2>
+  <!-- Inhalt im Card-/Grid-Layout -->
+  <main class="container section">
+    <div class="grid">
+      <div class="card">
+        <h2>Kontakt</h2>
+        <p>Schreibe uns an: <a href="mailto:jbxfjxtwps@privaterelay.appleid.com">DevTeam</a></p>
+        <p>Bitte sende, wenn möglich, eine kurze Beschreibung des Problems und die App-Version.</p>
+        <div class="mt-12">
+          <a class="btn primary" href="mailto:jbxfjxtwps@privaterelay.appleid.com"><span class="icon">✉️</span>E‑Mail senden</a>
+        </div>
+      </div>
 
-      <h3>iCloud-Synchronisation funktioniert nicht</h3>
-      <ol>
-        <li>Prüfe in den iOS-Einstellungen, ob du bei iCloud angemeldet bist.</li>
-        <li>Öffne in der App „Einstellungen → Synchronisation“ und stelle „iCloud“ ein.</li>
-        <li>Tippe auf „Jetzt synchronisieren“, um manuell zu starten.</li>
-      </ol>
+      <div class="card">
+        <h2>iCloud‑Synchronisation funktioniert nicht</h2>
+        <ol class="list">
+          <li>Prüfe in den iOS‑Einstellungen, ob du bei iCloud angemeldet bist.</li>
+          <li>Öffne in der App „Einstellungen → Synchronisation“ und stelle „iCloud“ ein.</li>
+          <li>Tippe auf „Jetzt synchronisieren“, um manuell zu starten.</li>
+        </ol>
+      </div>
 
-      <h3>Kalender-Import schlägt fehl</h3>
-      <ol>
-        <li>Stelle sicher, dass die Kalender-URL korrekt ist (beginnt meist mit http/https).</li>
-        <li>Füge die URL in „Einstellungen → Kalender-Import“ ein und tippe auf „Importieren“.</li>
-        <li>Bei wiederholten Fehlern: Sende uns die URL (falls möglich) per E-Mail.</li>
-      </ol>
+      <div class="card">
+        <h2>Kalender‑Import schlägt fehl</h2>
+        <ol class="list">
+          <li>Stelle sicher, dass die Kalender‑URL korrekt ist (beginnt meist mit http/https).</li>
+          <li>Füge die URL in „Einstellungen → Kalender‑Import“ ein und tippe auf „Importieren“.</li>
+          <li>Bei wiederholten Fehlern: Sende uns die URL (falls möglich) per E‑Mail.</li>
+        </ol>
+      </div>
 
-      <h3>Ich möchte offline bleiben</h3>
-      <p>Wähle in „Einstellungen → Synchronisation“ die Option „Offline“. Deine Daten bleiben lokal auf dem Gerät.</p>
-    </section>
+      <div class="card">
+        <h2>Ich möchte offline bleiben</h2>
+        <p>Wähle in „Einstellungen → Synchronisation“ die Option „Offline“. Deine Daten bleiben lokal auf dem Gerät.</p>
+      </div>
+    </div>
   </main>
 
-  <footer>
-    <p>&copy; 2026 Playlytics DEV</p>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Playlytics DEV</p>
+    </div>
   </footer>
 </body>
 </html>
