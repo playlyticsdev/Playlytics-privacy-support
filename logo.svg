@@ -1,22 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Playlytics Logo (PNG in SVG mit abgerundeten Ecken) -->
 <svg xmlns="http://www.w3.org/2000/svg"
      xmlns:xlink="http://www.w3.org/1999/xlink"
-     viewBox="0 0 1024 1024"
-     role="img" aria-label="Playlytics Logo">
-  <title>Playlytics Logo</title>
-  <desc>App-Icon als eingebettetes PNG mit abgerundeten Ecken Neu</desc>
-
-  <defs>
-    <!-- Eckenradius an iOS-App-Icon angelehnt -->
-    <clipPath id="cornerRadius">
-      <rect x="0" y="0" width="1024" height="1024" rx="220" ry="220"/>
-    </clipPath>
-  </defs>
-
-  <!-- Passe den Pfad ggf. an: ./assets/AppIcon.png oder ähnliches -->
-  <image xlink:href="./AppIcon.png"
+     viewBox="0 0 1024 1024" width="28" height="28" role="img" aria-label="Playlytics Logo">
+  <!-- WICHTIG: Absoluter Pfad zur PNG-Datei auf GitHub Pages -->
+  <image xlink:href="https://playlyticsdev.github.io/Playlytics-privacy-support/AppIcon.png"
          x="0" y="0" width="1024" height="1024"
-         preserveAspectRatio="xMidYMid slice"
-         clip-path="url(#cornerRadius)"/>
+         preserveAspectRatio="xMidYMid meet" />
 </svg>
