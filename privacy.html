@@ -7,51 +7,77 @@
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <header>
-    <h1>Datenschutzerklärung</h1>
-    <p>Stand: 03.05.2026</p>
+  <!-- Fixierter Header mit Branding -->
+  <header class="site-header">
+    <div class="container inner">
+      <a class="brand" href="./">
+        <!-- Ersetze logo.svg durch dein Logo/PNG -->
+        <img class="logo" src="./logo.svg" alt="Playlytics Logo" />
+        <span class="title">Playlytics</span>
+      </a>
+      <nav>
+        <a class="btn" href="./index.html"><span class="icon">🏠</span>Start</a>
+        <a class="btn" href="./support.html"><span class="icon">💬</span>Support</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section>
+  <!-- Hero-Bereich -->
+  <section class="hero">
+    <div class="container">
+      <div class="badge">Transparenz</div>
+      <h1>Datenschutzerklärung</h1>
+      <p class="m-0">Stand: 03.05.2026</p>
+    </div>
+  </section>
+
+  <!-- Inhalt im Card-Layout -->
+  <main class="container section">
+    <div class="card">
       <h2>Verantwortliche Stelle</h2>
       <p>Playlytics DEV<br>
       E-Mail: <a href="mailto:jbxfjxtwps@privaterelay.appleid.com">DevTeam</a></p>
-    </section>
+    </div>
 
-    <section>
+    <div class="card">
       <h2>Verarbeitete Daten in der App</h2>
       <p>Playlytics verarbeitet je nach Nutzung die folgenden Daten:</p>
-      <ul>
+      <ul class="list">
         <li>App-Inhalte (Teamdaten, Termine), die optional über iCloud zwischen deinen Geräten synchronisiert werden.</li>
         <li>Kalender-Import-URL, sofern du diese in der App hinterlegst, um Spiel- und Trainingspläne zu importieren.</li>
       </ul>
       <p>Die iCloud-Synchronisation ist optional und kann in den App-Einstellungen ein- oder ausgeschaltet werden.</p>
-    </section>
+    </div>
 
-    <section>
+    <div class="card">
       <h2>Zwecke und Rechtsgrundlagen</h2>
       <p>Wir verarbeiten Daten zur Bereitstellung der App-Funktionen (Teamorganisation, Terminverwaltung) gemäß Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung) sowie zur Wahrung berechtigter Interessen (Art. 6 Abs. 1 lit. f DSGVO), etwa zur Verbesserung der Nutzbarkeit.</p>
-    </section>
+    </div>
 
-    <section>
+    <div class="card">
       <h2>Speicherung und Empfänger</h2>
       <p>Bei aktivierter iCloud-Synchronisation werden Daten in deinem iCloud-Account gespeichert und über Apple-Infrastruktur übertragen. Apple ist dabei Anbieter des Cloud-Dienstes (siehe Datenschutzhinweise von Apple). Eine darüber hinausgehende Weitergabe durch uns erfolgt nicht.</p>
-    </section>
+    </div>
 
-    <section>
+    <div class="card">
       <h2>Betroffenenrechte</h2>
       <p>Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit sowie Widerspruch. Wende dich hierzu an: Kontaktadresse</p>
-    </section>
+    </div>
 
-    <section>
+    <div class="card">
       <h2>Kontakt</h2>
       <p>Bei Fragen zum Datenschutz: <a href="mailto:jbxfjxtwps@privaterelay.appleid.com">DevTeam</a></p>
-    </section>
+      <div class="mt-12">
+        <a class="btn primary" href="mailto:jbxfjxtwps@privaterelay.appleid.com"><span class="icon">✉️</span>E‑Mail senden</a>
+      </div>
+    </div>
   </main>
 
-  <footer>
-    <p>&copy; 2028 Playlytics DEV</p>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2028 Playlytics DEV</p>
+    </div>
   </footer>
 </body>
 </html>
