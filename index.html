@@ -7,24 +7,53 @@
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <header>
-    <h1>Playlytics</h1>
-    <p>Infos, Datenschutz & Support</p>
+  <!-- Fixierter Header mit Branding -->
+  <header class="site-header">
+    <div class="container inner">
+      <a class="brand" href="./">
+        <!-- Ersetze logo.svg durch dein Logo/PNG -->
+        <img class="logo" src="./logo.svg" alt="Playlytics Logo" />
+        <span class="title">Playlytics</span>
+      </a>
+      <nav>
+        <a class="btn" href="./privacy.html"><span class="icon">🛡️</span>Datenschutz</a>
+        <a class="btn" href="./support.html"><span class="icon">💬</span>Support</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section>
-      <h2>Willkommen</h2>
+  <!-- Hero-Bereich mit Claim -->
+  <section class="hero">
+    <div class="container">
+      <div class="badge">Infos, Datenschutz & Support</div>
+      <h1>Playlytics</h1>
       <p>Hier findest du unsere Datenschutzerklärung und Hilfeseiten zur App.</p>
-      <ul>
-        <li><a href="./privacy.html">Datenschutzerklärung</a></li>
-        <li><a href="./support.html">Support & FAQ</a></li>
-      </ul>
-    </section>
+    </div>
+  </section>
+
+  <!-- Hauptbereich im Card-Layout -->
+  <main class="container section">
+    <div class="grid">
+      <div class="card">
+        <h2>Willkommen</h2>
+        <p>Hier findest du unsere Datenschutzerklärung und Hilfeseiten zur App.</p>
+        <ul class="list">
+          <li><a href="./privacy.html">Datenschutzerklärung</a></li>
+          <li><a href="./support.html">Support &amp; FAQ</a></li>
+        </ul>
+        <div class="mt-12">
+          <a class="btn primary" href="./privacy.html"><span class="icon">🛡️</span>Zur Datenschutzerklärung</a>
+          <a class="btn" href="./support.html"><span class="icon">💬</span>Zum Support</a>
+        </div>
+      </div>
+    </div>
   </main>
 
-  <footer>
-    <p>&copy; 2026 Playlytics DEV. Alle Rechte vorbehalten.</p>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Playlytics DEV. Alle Rechte vorbehalten.</p>
+    </div>
   </footer>
 </body>
 </html>
