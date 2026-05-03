@@ -70,6 +70,13 @@ body {
   border-bottom: 1px solid var(--color-border);
   z-index: 10;
 }
+/* NEU: im Dark Mode etwas deckender, damit Inhalte klarer sind */
+@media (prefers-color-scheme: dark) {
+  .site-header {
+    background: color-mix(in oklab, var(--color-bg) 92%, transparent);
+  }
+}
+
 .site-header .inner {
   display: flex;
   align-items: center;
@@ -84,12 +91,24 @@ body {
   text-decoration: none;
   color: inherit;
 }
+/* WICHTIG: Logo sicher sichtbar und mit „Chip“-Hintergrund für Kontrast */
 .brand img.logo {
-  width: 28px;
+  width: 28px;         /* bei Bedarf 32/40 erhöhen */
   height: 28px;
+  display: inline-block;
   object-fit: contain;
   border-radius: 6px;
+
+  background: #fff;    /* heller Chip, damit Logo in Dark Mode nicht „verschwindet“ */
+  border: 1px solid rgba(0,0,0,0.08);
 }
+@media (prefers-color-scheme: dark) {
+  .brand img.logo {
+    background: #fff;              /* weißer Chip im Dark Mode */
+    border-color: rgba(255,255,255,0.10);
+  }
+}
+
 .brand .title {
   font-weight: 700;
   letter-spacing: .2px;
