@@ -1,485 +1,628 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <title>Support – Playlytics</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="./styles.css">
-  <style>
-    details {
-      border-bottom: 1px solid var(--color-border);
-      padding: 14px 0;
-    }
-    details:last-child {
-      border-bottom: none;
-    }
-    details summary {
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 0.98rem;
-      list-style: none;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    details summary::-webkit-details-marker { display: none; }
-    details summary::before {
-      content: "▸";
-      font-size: 0.85em;
-      color: var(--color-primary);
-      transition: transform .15s ease;
-      flex-shrink: 0;
-    }
-    details[open] summary::before {
-      transform: rotate(90deg);
-    }
-    details .answer {
-      margin-top: 10px;
-      padding-left: 22px;
-      color: var(--color-muted);
-      line-height: 1.7;
-    }
-    details .answer ol,
-    details .answer ul {
-      padding-left: 18px;
-      margin: 8px 0;
-    }
-    details .answer li {
-      margin-bottom: 4px;
-    }
-    details .answer code {
-      background: var(--color-primary-weak);
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-size: 0.9em;
-    }
-    .category-icon {
-      font-size: 1.15em;
-    }
-    .version-badge {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--color-primary);
-      background: var(--color-primary-weak);
-      padding: 3px 8px;
-      border-radius: 6px;
-      margin-left: 6px;
-      vertical-align: middle;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlytics – Support & Hilfe</title>
+    <style>
+        :root {
+            --bg: #f5f5f7;
+            --card: #ffffff;
+            --text: #1d1d1f;
+            --secondary: #6e6e73;
+            --accent: #0071e3;
+            --green: #34c759;
+            --orange: #ff9500;
+            --red: #ff3b30;
+            --border: #d2d2d7;
+            --code-bg: #f0f0f5;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #1c1c1e;
+                --card: #2c2c2e;
+                --text: #f5f5f7;
+                --secondary: #98989d;
+                --border: #3a3a3c;
+                --code-bg: #3a3a3c;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            padding: 40px 0 30px;
+        }
+        header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        header p {
+            color: var(--secondary);
+            font-size: 15px;
+            margin-top: 4px;
+        }
+        .version-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 12px;
+            margin-top: 10px;
+        }
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        nav a {
+            font-size: 13px;
+            color: var(--accent);
+            text-decoration: none;
+            padding: 5px 12px;
+            border-radius: 14px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            transition: background .2s;
+        }
+        nav a:hover { background: var(--accent); color: white; }
+        section {
+            background: var(--card);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 16px;
+            border: 1px solid var(--border);
+        }
+        h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            letter-spacing: -0.3px;
+        }
+        h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 16px 0 8px;
+        }
+        p, li { font-size: 15px; color: var(--text); }
+        ul { padding-left: 20px; margin: 8px 0; }
+        li { margin-bottom: 6px; }
+        details {
+            margin: 10px 0;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        summary {
+            padding: 12px 16px;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            background: var(--code-bg);
+        }
+        details > div { padding: 12px 16px; }
+        .tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 8px;
+            margin-left: 6px;
+            vertical-align: middle;
+        }
+        .tag-new { background: var(--green); color: white; }
+        .tag-improved { background: var(--accent); color: white; }
+        .tag-fix { background: var(--orange); color: white; }
+        .tip {
+            background: #e8f5e9;
+            border-left: 4px solid var(--green);
+            padding: 12px 16px;
+            border-radius: 0 10px 10px 0;
+            margin: 12px 0;
+            font-size: 14px;
+        }
+        .warning {
+            background: #fff3e0;
+            border-left: 4px solid var(--orange);
+            padding: 12px 16px;
+            border-radius: 0 10px 10px 0;
+            margin: 12px 0;
+            font-size: 14px;
+        }
+        @media (prefers-color-scheme: dark) {
+            .tip { background: #1b3a1b; }
+            .warning { background: #3a2a1b; }
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+            font-size: 14px;
+        }
+        th, td {
+            padding: 8px 10px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        th {
+            font-weight: 600;
+            font-size: 13px;
+            color: var(--secondary);
+        }
+        .contact {
+            text-align: center;
+            padding: 30px 0;
+        }
+        .contact a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .emoji { font-size: 18px; margin-right: 6px; }
+    </style>
 </head>
 <body>
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container inner">
-      <a class="brand" href="./">
-        <img class="logo" src="./AppIcon.png" alt="Playlytics Logo" />
-        <span class="title">Playlytics</span>
-      </a>
-      <nav>
-        <a class="btn" href="./index.html"><span class="icon">🏠</span>Start</a>
-        <a class="btn" href="./privacy.html"><span class="icon">🛡️</span>DSGVO</a>
-      </nav>
+
+<header>
+    <h1>Playlytics</h1>
+    <p>Live-Analyse für Amateurfußball</p>
+    <span class="version-badge">v1.0.6</span>
+</header>
+
+<nav>
+    <a href="#new">Neu in 1.0.6</a>
+    <a href="#basics">Grundlagen</a>
+    <a href="#match">Spielerfassung</a>
+    <a href="#stats">Statistiken</a>
+    <a href="#trends">Trends & Coaching</a>
+    <a href="#archive">Archiv</a>
+    <a href="#pdf">PDF-Export</a>
+    <a href="#icloud">iCloud</a>
+    <a href="#faq">FAQ</a>
+</nav>
+
+<!-- ==================== NEU IN 1.0.6 ==================== -->
+<section id="new">
+    <h2><span class="emoji">🆕</span>Neu in Version 1.0.6</h2>
+
+    <details>
+        <summary>PDF-Saisonbericht <span class="tag tag-new">Neu</span></summary>
+        <div>
+            <p>Erstelle professionelle PDF-Berichte deiner gesamten Saison. Der Bericht enthält eine Saisonübersicht mit allen wichtigen Kennzahlen sowie detaillierte Spielerstatistiken auf separaten Seiten.</p>
+            <p>Zu finden unter: <strong>Spiele → PDF-Export-Button</strong></p>
+        </div>
+    </details>
+
+    <details>
+        <summary>Coaching-Analyse mit 21 Insights <span class="tag tag-new">Neu</span></summary>
+        <div>
+            <p>Automatische Analyse der letzten 5 Spiele mit intelligenten Empfehlungen. Von Formtief-Erkennung über Verletzungsanfälligkeit bis hin zu Zweikampfquoten – die App erkennt Trends und gibt Handlungsempfehlungen.</p>
+            <p>Neu: Filtere die Analysen nach <strong>Alle</strong>, <strong>Coach</strong> oder <strong>Scout</strong>, um nur relevante Insights für deinen Anwendungsfall zu sehen.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>Scout-Modus Filter <span class="tag tag-new">Neu</span></summary>
+        <div>
+            <p>Die Coaching-Analyse unterscheidet jetzt zwischen Trainer- und Scout-relevanten Insights. Im Scout-Filter siehst du nur die Analysen, die für die Gegnerbeobachtung relevant sind. Jeder Filter zeigt eine Erklärung an.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>Spielervergleich & Trends <span class="tag tag-new">Neu</span></summary>
+        <div>
+            <p>Vergleiche zwei Spieler direkt miteinander – über alle wichtigen Kennzahlen wie Note, Tore, Vorlagen, Zweikämpfe und mehr. Ein Notenvergleichsdiagramm zeigt die Entwicklung über die Saison.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>Teamform-Diagramm <span class="tag tag-new">Neu</span></summary>
+        <div>
+            <p>Visualisiert die Tordifferenz aller Saisonspiele als Balkendiagramm. Die letzten 5 Ergebnisse werden als S/U/N-Badges (Sieg/Unentschieden/Niederlage) angezeigt.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>Ballbesitz-Anzeige <span class="tag tag-new">Neu</span></summary>
+        <div>
+            <p>In der Saison-KPI und im Archiv wird der kumulierte Ballbesitz über alle Spiele als visuelle Leiste angezeigt – Team vs. Gegner in Prozent.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>Scout-Modus Einwechslungen <span class="tag tag-new">Neu</span></summary>
+        <div>
+            <p>Im Scout-Modus können jetzt Aus- und Einwechslungen erfasst werden. Spieler können vom Feld genommen und neue Spieler eingewechselt werden.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>Verbesserte iCloud-Synchronisation <span class="tag tag-improved">Verbessert</span></summary>
+        <div>
+            <p>Neue Merge-before-Upload-Strategie: Vor dem Hochladen werden zuerst Cloud-Daten heruntergeladen und zusammengeführt, um Datenverluste zu vermeiden.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>Notenvergabe & Auswechslungs-Feedback <span class="tag tag-improved">Verbessert</span></summary>
+        <div>
+            <p>Optimierte Berechnung der Endnoten und verbessertes visuelles Feedback bei Auswechslungen.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>Archiv-KPI & Codable-Decoder <span class="tag tag-fix">Fix</span></summary>
+        <div>
+            <p>Neue ArchiveKPIView für Archiv-Statistiken. Rückwärtskompatible Decoder verhindern Datenverlust bei Updates.</p>
+        </div>
+    </details>
+</section>
+
+<!-- ==================== GRUNDLAGEN ==================== -->
+<section id="basics">
+    <h2><span class="emoji">📋</span>Grundlagen</h2>
+
+    <h3>Team & Spieler erstellen</h3>
+    <p>Unter <strong>Team</strong> kannst du deinen Vereinsnamen und dein Logo festlegen. Spieler werden mit Name, Trikotnummer und Position(en) angelegt.</p>
+
+    <h3>Verfügbarkeit & Disziplin</h3>
+    <p>Jeder Spieler hat einen Verfügbarkeitsstatus:</p>
+    <ul>
+        <li><strong>Verfügbar</strong> – spielbereit</li>
+        <li><strong>Verletzt</strong> – wird bei Verletzungsereignissen automatisch gesetzt (optional)</li>
+        <li><strong>Gesperrt</strong> – wird bei Roter Karte automatisch gesetzt (optional)</li>
+        <li><strong>Nicht verfügbar</strong> – manuell gesetzt</li>
+    </ul>
+
+    <h3>Disziplin-Einstellungen</h3>
+    <p>In den Einstellungen kannst du konfigurieren:</p>
+    <ul>
+        <li>Automatische Sperre nach Roter Karte</li>
+        <li>Automatische Verletzungsmarkierung</li>
+        <li>Gelbe-Karten-Schwelle (z.B. nach 5 Gelben = automatische Sperre)</li>
+    </ul>
+
+    <h3>Kalender-Import</h3>
+    <p>Importiere Spielpläne über eine Kalender-URL (ICS-Format). Die App erkennt automatisch Gegner, Datum und Uhrzeit.</p>
+</section>
+
+<!-- ==================== SPIELERFASSUNG ==================== -->
+<section id="match">
+    <h2><span class="emoji">⚽</span>Spielerfassung</h2>
+
+    <h3>Neues Spiel erstellen</h3>
+    <p>Wähle den Modus, trage den Gegner ein, lege Heim/Auswärts fest und stelle deine Aufstellung zusammen.</p>
+
+    <details>
+        <summary>Coach-Modus (Trainermodus)</summary>
+        <div>
+            <p>Der volle Funktionsumfang für die eigene Mannschaft:</p>
+            <ul>
+                <li>Exakte Aufstellung mit 11 Spielern</li>
+                <li>Echtzeit-Ereigniserfassung mit Zeitstempel</li>
+                <li>Ballbesitz-Tracking (Team vs. Gegner)</li>
+                <li>Spielernoten auf der Schulnotenskala (1–6)</li>
+                <li>Feldpositionierung und Aufstellungsansicht</li>
+                <li>Auswechslungen über die Feldansicht</li>
+                <li>Timeline-basierte Spielanalyse</li>
+            </ul>
+            <div class="tip">
+                <strong>Tipp:</strong> Nutze den Coach-Modus für alle eigenen Spiele, bei denen du detaillierte Spielzeiten und Ballbesitzdaten benötigst.
+            </div>
+        </div>
+    </details>
+
+    <details>
+        <summary>Scout-Modus (Beobachtungsmodus)</summary>
+        <div>
+            <p>Flexibler Modus für die Spielerbeobachtung – eigene oder gegnerische Spieler:</p>
+            <ul>
+                <li>Flexible Spielerauswahl (ab 1 Spieler)</li>
+                <li>Alle Events erfassbar (Tore, Karten, Zweikämpfe, Pässe etc.)</li>
+                <li>Aus- und Einwechslungen erfassen</li>
+                <li>Spielernoten vergeben</li>
+                <li>Kein Timer nötig – Ballbesitz- und Zeitdaten entfallen</li>
+            </ul>
+            <div class="tip">
+                <strong>Tipp:</strong> Der Scout-Modus eignet sich sowohl für Gegnerbeobachtung als auch für Trainer, die nur einzelne Spieler beobachten möchten.
+            </div>
+        </div>
+    </details>
+
+    <h3>Über 20 Ereignistypen</h3>
+    <p>Während des Spiels kannst du folgende Events per Schnelltaste erfassen:</p>
+    <table>
+        <tr><th>Kategorie</th><th>Events</th></tr>
+        <tr><td>Angriff</td><td>Tor, Vorlage, Schuss aufs Tor, Schuss daneben</td></tr>
+        <tr><td>Passspiel</td><td>Pass erfolgreich, Pass fehl</td></tr>
+        <tr><td>Zweikämpfe</td><td>Zweikampf gewonnen/verloren, Kopfball gewonnen</td></tr>
+        <tr><td>Standards</td><td>Ecke geschossen/verursacht, Freistoß</td></tr>
+        <tr><td>Disziplin</td><td>Foul, Foul erlitten, Gelbe/Rote Karte, Abseits</td></tr>
+        <tr><td>Abwehr</td><td>Parade, Gegentor verursacht</td></tr>
+        <tr><td>Sonstiges</td><td>Verletzung</td></tr>
+    </table>
+</section>
+
+<!-- ==================== STATISTIKEN ==================== -->
+<section id="stats">
+    <h2><span class="emoji">📊</span>Statistiken</h2>
+
+    <h3>Dashboard</h3>
+    <p>Dein Vereins-Cockpit mit allen wichtigen Informationen auf einen Blick:</p>
+    <ul>
+        <li>Nächstes anstehendes Spiel</li>
+        <li>Saisonbilanz (Siege-Unentschieden-Niederlagen als Balken)</li>
+        <li>6 KPI-Karten: Tore, Gegentore, Differenz, Ø-Note, Spiele, Zu-Null</li>
+        <li>Aktuelle Form (letzte 5 Spiele)</li>
+        <li>Bestbewerteter Spieler</li>
+    </ul>
+
+    <h3>Saison-KPI</h3>
+    <p>Umfassende Saisonstatistiken über alle abgeschlossenen Spiele:</p>
+    <ul>
+        <li>Übersicht: Spiele, Bilanz, Tore, Differenz, Ø-Note, Zu-Null</li>
+        <li><strong>Ballbesitz</strong>: Kumulierter Teamballbesitz vs. Gegner als visuelle Leiste</li>
+        <li>Offensive: Tore, Vorlagen, Schüsse</li>
+        <li>Passspiel: Erfolgreiche/Fehlpässe mit Quote</li>
+        <li>Zweikämpfe: Gewonnen/Verloren, Kopfbälle</li>
+        <li>Standards: Ecken, Freistöße</li>
+        <li>Disziplin: Fouls, Karten, Abseits</li>
+        <li>Abwehr: Paraden, verursachte Gegentore</li>
+        <li>Verletzungen: Gesamt und aktuell verletzte Spieler</li>
+    </ul>
+
+    <h3>Spielerstatistiken</h3>
+    <p>Für jeden Spieler gibt es ein ausführliches Profil mit:</p>
+    <ul>
+        <li>Gesamtnote mit farblicher Bewertung</li>
+        <li>Notenhistorie über alle Spiele (scrollbare Karten)</li>
+        <li>Alle Saison-Statistiken nach Kategorien</li>
+        <li>Einsatzzeiten und Spielminuten</li>
+    </ul>
+
+    <h3>Spieldetails & Timeline</h3>
+    <p>Nach jedem Spiel siehst du eine chronologische Timeline aller Ereignisse mit Zeitstempel, Spielerinfos und Spielstand-Verlauf.</p>
+</section>
+
+<!-- ==================== TRENDS & COACHING ==================== -->
+<section id="trends">
+    <h2><span class="emoji">📈</span>Trends & Coaching-Analyse</h2>
+
+    <h3>Teamform-Diagramm</h3>
+    <p>Balkendiagramm der Tordifferenz aller Saisonspiele. Die letzten 5 Spiele werden als farbige S/U/N-Badges angezeigt (Grün = Sieg, Orange = Unentschieden, Rot = Niederlage).</p>
+    <p>Das Diagramm wird im Scout-Filter ausgeblendet, da es sich auf die eigene Teamleistung bezieht.</p>
+
+    <h3>Coaching-Analyse (21 Insights)</h3>
+    <p>Die App analysiert automatisch die letzten 5 Spiele und generiert datenbasierte Handlungsempfehlungen. Warnungen werden vor positiven Insights angezeigt.</p>
+
+    <h3>Analyse-Filter</h3>
+    <p>Über den Segmented Picker kannst du die Analysen filtern:</p>
+
+    <table>
+        <tr><th>Filter</th><th>Beschreibung</th><th>Insights</th></tr>
+        <tr>
+            <td><strong>Alle</strong></td>
+            <td>Alle Spiele – ideal für Trainer, die sowohl den Coach-Modus als auch den Scout-Modus zur Einzelspielerbeobachtung nutzen.</td>
+            <td>21</td>
+        </tr>
+        <tr>
+            <td><strong>Coach</strong></td>
+            <td>Nur Coach-Spiele – zeigt alle Analysen inkl. Ballbesitz, Spielzeiten und Bewertungen.</td>
+            <td>19</td>
+        </tr>
+        <tr>
+            <td><strong>Scout</strong></td>
+            <td>Nur Scout-Spiele – zeigt Analysen zu Ergebnissen, Events und Leistungsdaten ohne Timer-abhängige Werte.</td>
+            <td>10</td>
+        </tr>
+    </table>
+
+    <h3>Alle 21 Analysen im Überblick</h3>
+
+    <details>
+        <summary>Analysen für alle Filter (Coach + Scout)</summary>
+        <div>
+            <table>
+                <tr><th>Analyse</th><th>Auslöser</th></tr>
+                <tr><td>⭐ Bester Spieler</td><td>Spieler mit bester Ø-Note (mind. 2 Spiele)</td></tr>
+                <tr><td>⚽ Torjäger</td><td>Spieler mit den meisten Toren (mind. 2)</td></tr>
+                <tr><td>🟡 Foulspiel reduzieren</td><td>Ø 5+ Fouls pro Spiel</td></tr>
+                <tr><td>❌ Torflaute</td><td>Weniger als 1 Tor pro Spiel (mind. 3 Spiele)</td></tr>
+                <tr><td>⬇ef</td><td>Spieler mit Ø-Note schlechter als 4.0</td></tr>
+                <tr><td>✅ Starkes Passspiel</td><td>Passquote 75%+ / ❌ Schwach bei unter 55%</td></tr>
+                <tr><td>🛡️ Zweikampfstark</td><td>Zweikampfquote 60%+ / ❌ Schwach bei unter 40%</td></tr>
+                <tr><td>🎯 Schlüsselspieler</td><td>Spieler mit den meisten Vorlagen (mind. 2)</td></tr>
+                <tr><td>🏥 Verletzungsanfällig</td><td>Spieler mit 2+ Verletzungen in den letzten Spielen</td></tr>
+            </table>
+        </div>
+    </details>
+
+    <details>
+        <summary>Analysen nur im Coach-Filter</summary>
+        <div>
+            <table>
+                <tr><th>Analyse</th><th>Auslöser</th></tr>
+                <tr><td>🟨 Disziplin beachten</td><td>3+ Karten-Punkte (Gelb=1, Rot=3)</td></tr>
+                <tr><td>🏥 Verletzungstrend</td><td>2+ Verletzungen oder 2+ verletzte Spieler</td></tr>
+                <tr><td>🛡️ Defensive stärken</td><td>Ø 2+ Gegentore pro Spiel</td></tr>
+                <tr><td>🔒 Starke Defensive</td><td>2+ Zu-Null-Spiele</td></tr>
+                <tr><td>🔥 Siegesserie</td><td>Alle letzten Spiele gewonnen (mind. 3)</td></tr>
+                <tr><td>⚠️ Negativserie</td><td>Alle letzten Spiele verloren (mind. 3)</td></tr>
+                <tr><td>⚽ Ballbesitz-Trend</td><td>Steigend/sinkend (8%+ Shift) oder dominant/schwach</td></tr>
+                <tr><td>🏠 Heim/Auswärts</td><td>Heim- oder Auswärtsstärke/-schwäche erkennen</td></tr>
+                <tr><td>⏱️ Späte Gegentore</td><td>Mehr als 2× so viele Gegentore in der 2. Halbzeit</td></tr>
+                <tr><td>🔄 Keine Rotation</td><td>Identische Startelf in 3+ Spielen</td></tr>
+                <tr><td>🃏 Super Sub</td><td>Einwechselspieler mit Ø-Note besser als 2.5</td></tr>
+            </table>
+        </div>
+    </details>
+
+    <details>
+        <summary>Analysen nur im Scout-Filter</summary>
+        <div>
+            <table>
+                <tr><th>Analyse</th><th>Auslöser</th></tr>
+                <tr><td>👤 Häufig fehlende Spieler</td><td>Spieler die in mehr als der Hälfte der Spiele fehlen – mögliche Verletzung oder Sperre</td></tr>
+            </table>
+        </div>
+    </details>
+
+    <h3>Spielervergleich</h3>
+    <p>Wähle zwei Spieler aus und vergleiche sie direkt:</p>
+    <ul>
+        <li>Note, Spiele, Minuten, Tore, Vorlagen</li>
+        <li>Schüsse aufs Tor, erfolgreiche Pässe, Zweikämpfe</li>
+        <li>Gelbe & Rote Karten</li>
+        <li>Notenvergleichs-Diagramm über die gesamte Saison</li>
+    </ul>
+    <p>Der bessere Wert wird jeweils grün hervorgehoben.</p>
+</section>
+
+<!-- ==================== ARCHIV ==================== -->
+<section id="archive">
+    <h2><span class="emoji">🗂️</span>Archiv</h2>
+
+    <h3>Spiele archivieren</h3>
+    <p>Verschiebe abgeschlossene Spiele in benannte Archivordner (z.B. "Hinrunde 2024"). Du kannst einen neuen Ordner erstellen oder einen bestehenden wählen. Mehrere Spiele können gleichzeitig archiviert werden.</p>
+
+    <h3>Archiv-Statistiken</h3>
+    <p>Jeder Archivordner bietet eigene KPI-Statistiken:</p>
+    <ul>
+        <li>Saisonbilanz und alle Kennzahlen des archivierten Zeitraums</li>
+        <li>Kumulierter Ballbesitz</li>
+        <li>Spielerstatistiken innerhalb des Archivs</li>
+        <li>Spielerliste mit archivspezifischen Noten</li>
+    </ul>
+
+    <h3>Spiele wiederherstellen</h3>
+    <p>Per Swipe nach links kannst du einzelne Spiele aus dem Archiv zurück in die aktuelle Saison verschieben.</p>
+</section>
+
+<!-- ==================== PDF EXPORT ==================== -->
+<section id="pdf">
+    <h2><span class="emoji">📄</span>PDF-Saisonbericht</h2>
+
+    <p>Erstelle einen professionellen A4-Bericht deiner Saison zum Teilen oder Drucken.</p>
+
+    <h3>Inhalt des Berichts</h3>
+    <ul>
+        <li><strong>Deckblatt:</strong> Vereinslogo, Name, Datum</li>
+        <li><strong>Saisonübersicht:</strong> Spielzahl, Bilanz, Tore, Gegentore, Differenz, Ø-Tore pro Spiel, Torschützenkönig, Vorlagenkönig</li>
+        <li><strong>Spielerseiten:</strong> Individuelle Statistikseiten für jeden Spieler mit Note, allen Saison-Events und Einsatzdaten</li>
+    </ul>
+
+    <div class="tip">
+        <strong>Tipp:</strong> Den PDF-Export findest du unter <strong>Spiele → PDF-Button</strong> in der oberen Leiste.
     </div>
-  </header>
+</section>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container">
-      <div class="badge">Hilfe & Kontakt</div>
-      <h1>Support & FAQ</h1>
-      <p>Antworten auf häufige Fragen und Lösungen bei Problemen.</p>
-    </div>
-  </section>
+<!-- ==================== iCLOUD ==================== -->
+<section id="icloud">
+    <h2><span class="emoji">☁>iCloud-Synchronisation</h2>
 
-  <!-- Inhalt -->
-  <main class="container section">
+    <h3>Einrichtung</h3>
+    <p>In den Einstellungen kannst du zwischen Offline (nur lokal) und iCloud wechseln. Bei aktiviertem iCloud werden deine Daten automatisch in die Cloud gesichert.</p>
 
-    <!-- Neu in 1.0.6 -->
-    <div class="card">
-      <h2><span class="category-icon">🆕</span> Neu in Version 1.0.6</h2>
+    <h3>Manuelle Synchronisation</h3>
+    <p>Über den "Jetzt synchronisieren"-Button wird ein manueller Upload ausgelöst. Dabei werden zuerst Cloud-Daten heruntergeladen und mit lokalen Daten zusammengeführt (Merge-Strategie), um Datenverluste zu vermeiden.</p>
 
-      <details open>
-        <summary>Scout-Auswechslungen <span class="version-badge">v1.0.6</span></summary>
-        <div class="answer">
-          <p>Im <strong>Scout-Modus</strong> stehen jetzt Auswechslungs-Funktionen zur Verfügung:</p>
-          <ul>
-            <li><strong>Auswechseln (Substituted Off):</strong> Markiere einen beobachteten Spieler als ausgewechselt. Er wird in der Timeline mit dem Zeitpunkt erfasst.</li>
-            <li><strong>Einwechseln (Substituted In):</strong> Füge einen neuen Spieler zur Aufstellung hinzu — direkt aus dem Kader oder als neuen Spieler.</li>
-            <li>Alle Scout-Auswechslungen erscheinen in der <strong>Match-Timeline</strong> und werden in den Statistiken berücksichtigt.</li>
-          </ul>
-          <p><em>Hinweis: Im Scout-Modus gibt es keine Auswechselbank — Spieler werden direkt ein- oder ausgewechselt.</em></p>
-        </div>
-      </details>
-
-      <details>
-        <summary>Verbesserter iCloud-Sync <span class="version-badge">v1.0.6</span></summary>
-        <div class="answer">
-          <p>Der manuelle iCloud-Sync wurde verbessert:</p>
-          <ul>
-            <li>Vor dem Upload werden lokale und Cloud-Daten automatisch zusammengeführt (<strong>Merge-before-Upload</strong>).</li>
-            <li>Das Risiko von Datenverlusten bei gleichzeitiger Nutzung auf mehreren Geräten wurde deutlich reduziert.</li>
-          </ul>
-        </div>
-      </details>
+    <div class="warning">
+        <strong>Hinweis:</strong> iCloud muss auf dem Gerät aktiviert und der iCloud-Speicher ausreichend sein. Bei fehlender Verfügbarkeit zeigt die App eine entsprechende Meldung an.
     </div>
 
-    <!-- Neu in 1.0.5 -->
-    <div class="card">
-      <h2><span class="category-icon">📦</span> Neu in Version 1.0.5</h2>
+    <h3>Kalender-Integration</h3>
+    <p>Importiere Spielpläne über eine Kalender-Abo-URL (ICS-Format). Die App erkennt Gegner, Datum und Uhrzeit automatisch und erstellt die Spiele für dich.</p>
+</section>
 
-      <details>
-        <summary>Archiv-Statistiken <span class="version-badge">v1.0.5</span></summary>
-        <div class="answer">
-          <p>Archive haben jetzt eine eigene <strong>Statistik-Übersicht (KPI-View)</strong>:</p>
-          <ul>
-            <li>Gesamtbilanz (Siege, Unentschieden, Niederlagen) über alle Spiele im Archiv</li>
-            <li>Tore, Gegentore und Tordifferenz</li>
-            <li>Durchschnittliche Spielerbewertung</li>
-            <li>Offensive, Defensive, Passspiel und Zweikampf-Statistiken</li>
-          </ul>
-          <p>Du findest den Link <strong>„Statistik-Übersicht"</strong> oben in jedem Archiv-Ordner.</p>
-        </div>
-      </details>
+<!-- ==================== FAQ ==================== -->
+<section id="faq">
+    <h2><span class="emoji">❓</span>Häufige Fragen</h2>
 
-      <details>
-        <summary>Verbesserte Datensicherheit <span class="version-badge">v1.0.5</span></summary>
-        <div class="answer">
-          <p>Die Datendecoder wurden abwärtskompatibel erweitert:</p>
-          <ul>
-            <li>Spielerdaten aus älteren Versionen werden jetzt fehlerfrei geladen — auch wenn neue Felder (wie Verfügbarkeit oder Verletzungs-Tracking) noch nicht vorhanden sind.</li>
-            <li>Das Risiko von Datenverlust beim Update wurde eliminiert.</li>
-          </ul>
-        </div>
-      </details>
-    </div>
+    <details>
+        <summary>Was passiert wenn ich einen Spieler lösche?</summary>
+        <div><p>Beim Löschen eines Spielers wird eine Warnung angezeigt, die zeigt wie viele Spiele betroffen sind. Die Spielstatistiken des gelöschten Spielers bleiben in den bereits abgeschlossenen Spielen erhalten.</p></div>
+    </details>
 
-    <!-- Kontakt -->
-    <div class="card">
-      <h2>📬 Kontakt</h2>
-      <p>Du findest keine Lösung? Schreibe uns — bitte mit kurzer Problembeschreibung und deiner App-Version (findest du unter <em>Team → Info</em>).</p>
-      <div class="mt-12">
-        <a class="btn primary" href="mailto:playlyticsdev@gmail.com"><span class="icon">✉️</span>playlyticsdev@gmail.com</a>
-      </div>
-    </div>
-
-    <!-- Erste Schritte -->
-    <div class="card">
-      <h2><span class="category-icon">🚀</span> Erste Schritte</h2>
-
-      <details>
-        <summary>Wie starte ich mein erstes Spiel?</summary>
-        <div class="answer">
-          <ol>
-            <li>Gehe zum Tab <strong>„Neues Spiel"</strong>.</li>
-            <li>Wähle den Modus: <strong>Coach</strong> (volle Aufstellung mit 11 Spielern) oder <strong>Scout</strong> (freie Spieleranzahl, Beobachtermodus).</li>
-            <li>Gib den Gegner-Namen ein und wähle Heim oder Auswärts.</li>
-            <li>Tippe auf <strong>„Aufstellung wählen"</strong> und wähle deine Spieler aus.</li>
-            <li>Tippe auf <strong>„Spiel starten"</strong>.</li>
-          </ol>
-        </div>
-      </details>
-
-      <details>
-        <summary>Was ist der Unterschied zwischen Coach und Scout?</summary>
-        <div class="answer">
-          <p><strong>Coach-Modus:</strong> Du verwaltest dein eigenes Team mit exakt 11 Startspielern und Auswechselbank. Wechsel, Ballbesitz und alle Statistiken stehen zur Verfügung.</p>
-          <p><strong>Scout-Modus:</strong> Du beobachtest ein beliebiges Spiel. Die Spieleranzahl ist flexibel, es gibt keine feste Auswechselbank. Seit Version 1.0.6 kannst du auch im Scout-Modus Spieler ein- und auswechseln. Ideal für gegnerische Teams oder Talentsichtung.</p>
-        </div>
-      </details>
-
-      <details>
-        <summary>Wie lege ich Spieler an?</summary>
-        <div class="answer">
-          <ol>
-            <li>Gehe zum Tab <strong>„Team"</strong>.</li>
-            <li>Tippe auf <strong>„+"</strong> oben rechts.</li>
-            <li>Gib Name, Trikotnummer und bevorzugte Position(en) ein.</li>
-            <li>Bestätige mit <strong>„Speichern"</strong>.</li>
-          </ol>
-        </div>
-      </details>
-    </div>
-
-    <!-- Während des Spiels -->
-    <div class="card">
-      <h2><span class="category-icon">⚽</span> Während des Spiels</h2>
-
-      <details>
-        <summary>Wie erfasse ich Spieleraktionen (Tore, Karten, Pässe, Zweikämpfe)?</summary>
-        <div class="answer">
-          <p>Tippe in der Aufstellungsliste auf einen Spieler. Es öffnet sich die <strong>Bewertungsansicht</strong> mit allen verfügbaren Aktionen (Tor, Vorlage, Gelbe/Rote Karte, Pass, Zweikampf usw.).</p>
-          <p><strong>Tipp:</strong> Nutze die <strong>Schnellbewertung</strong> (Blitz-Symbol ⚡ oben rechts) für schnelles Erfassen — dort siehst du alle Aktionen als kompakte Symbole.</p>
-        </div>
-      </details>
-
-      <details>
+    <details>
         <summary>Wie funktioniert der Ballbesitz?</summary>
-        <div class="answer">
-          <p>Im Spielbildschirm findest du den Bereich <strong>„Ballbesitz"</strong>. Tippe auf <strong>„Team"</strong> oder <strong>„Gegner"</strong>, je nachdem wer den Ball hat. Die App zählt die Sekunden automatisch mit.</p>
-          <p>Mit <strong>„Auto-Ballbesitz"</strong> wird der Besitz bei bestimmten Aktionen (z.B. Pass, Zweikampf gewonnen) automatisch aktualisiert.</p>
+        <div><p>Im Coach-Modus wird die Ballbesitzzeit in Sekunden gemessen – für dein Team und den Gegner getrennt. Die Prozentwerte werden automatisch berechnet. Im Scout-Modus steht kein Timer zur Verfügung, daher entfällt die Ballbesitzerfassung.</p></div>
+    </details>
+
+    <details>
+        <summary>Was bedeuten die Noten 1–6?</summary>
+        <div>
+            <p>Die App nutzt die deutsche Schulnotenskala:</p>
+            <ul>
+                <li><strong>1.0 – 1.5:</strong> Herausragend (grün)</li>
+                <li><strong>1.6 – 2.5:</strong> Gut (grün)</li>
+                <li><strong>2.6 – 3.5:</strong> Befriedigend (orange)</li>
+                <li><strong>3.6 – 4.5:</strong> Ausreichend (orange)</li>
+                <li><strong>4.6 – 6.0:</strong> Mangelhaft bis ungenügend (rot)</li>
+            </ul>
         </div>
-      </details>
+    </details>
 
-      <details>
-        <summary>Wie mache ich eine Auswechslung?</summary>
-        <div class="answer">
-          <p><strong>Im Coach-Modus:</strong></p>
-          <ol>
-            <li>Tippe auf das <strong>Wechsel-Symbol</strong> (⇄) neben dem Spieler, der ausgewechselt werden soll.</li>
-            <li>Wähle den Einwechselspieler von der Bank aus.</li>
-            <li>Die Auswechslung wird automatisch in der Timeline erfasst.</li>
-          </ol>
-          <p><strong>Im Scout-Modus</strong> <span class="version-badge">v1.0.6</span><strong>:</strong></p>
-          <ol>
-            <li>Tippe auf einen Spieler und wähle <strong>„Auswechseln"</strong>, um ihn als ausgewechselt zu markieren.</li>
-            <li>Nutze <strong>„Spieler einwechseln"</strong>, um einen neuen Spieler zur Aufstellung hinzuzufügen.</li>
-          </ol>
+    <details>
+        <summary>Funktioniert die App auch offline?</summary>
+        <div><p>Ja. Alle Funktionen arbeiten vollständig offline. Die iCloud-Synchronisation ist optional und dient nur als Backup bzw. zur Geräte-Übergreifenden Nutzung.</p></div>
+    </details>
+
+    <details>
+        <summary>Was ist der Unterschied zwischen Coach und Scout?</summary>
+        <div>
+            <p><strong>Coach-Modus:</strong> Voller Funktionsumfang mit Timer, Ballbesitz, Feldpositionierung und exakter Aufstellung (11 Spieler). Für die eigene Mannschaft.</p>
+            <p><strong>Scout-Modus:</strong> Flexibel, ohne Timer. Ideal für Gegnerbeobachtung oder wenn man nur einzelne Spieler beobachten will. Alle Events und Noten können trotzdem erfasst werden.</p>
         </div>
-      </details>
+    </details>
 
-      <details>
-        <summary>Wie funktioniert die Halbzeit / Spielende?</summary>
-        <div class="answer">
-          <p>Nutze die drei Buttons oben im Spielbildschirm:</p>
-          <ul>
-            <li><strong>Start</strong> — Startet die Uhr</li>
-            <li><strong>Pause</strong> — Pausiert die Uhr (z.B. bei Verletzungsunterbrechung)</li>
-            <li><strong>Halbzeit / Spielende</strong> — Beendet die aktuelle Halbzeit. In der 2. Halbzeit wird damit das Spiel abgeschlossen.</li>
-          </ul>
-          <p>Die App erkennt automatisch, ob du in der 1. oder 2. Halbzeit bist und zeigt die Nachspielzeit korrekt an.</p>
+    <details>
+        <summary>Wann nutze ich welchen Analyse-Filter?</summary>
+        <div>
+            <p><strong>Alle:</strong> Du bist Trainer und nutzt beide Modi – z.B. Coach für eigene Spiele und Scout für Einzelspielerbeobachtung. Du siehst alle 21 Analysen.</p>
+            <p><strong>Coach:</strong> Du willst nur die Coach-Spiele analysieren. Zeigt 19 Analysen inkl. Ballbesitz, Spielzeiten und Aufstellungs-Insights.</p>
+            <p><strong>Scout:</strong> Du willst nur die Scout-Spiele analysieren. Zeigt 10 Analysen – fokussiert auf Ergebnisse, Events und spielerbezogene Daten.</p>
         </div>
-      </details>
+    </details>
 
-      <details>
-        <summary>Kann ich eine Aktion rückgängig machen?</summary>
-        <div class="answer">
-          <p>Ja. Tippe auf den <strong>Rückgängig-Pfeil</strong> (↩) oben rechts im Spielbildschirm. Die letzte Aktion wird aus der Timeline entfernt.</p>
+    <details>
+        <summary>Welche Analysen sehe ich im Scout-Filter?</summary>
+        <div>
+            <p>Im Scout-Filter siehst du: Bester Spieler, Torjäger, Foulspiel, Torflaute, Formtief, Passspiel, Zweikämpfe, Schlüsselspieler, Verletzungsanfälligkeit und häufig fehlende Spieler.</p>
+            <p>Ausgeblendet werden Analysen die Timer-Daten (Ballbesitz, späte Gegentore), Aufstellungs-Management (Rotation, Super Sub) oder mannschaftsspezifische Daten (Defensive, Heim/Auswärts, Serien) benötigen.</p>
         </div>
-      </details>
-    </div>
+    </details>
 
-    <!-- Statistiken & Archiv -->
-    <div class="card">
-      <h2><span class="category-icon">📊</span> Statistiken & Archiv</h2>
+    <details>
+        <summary>Kann ich archivierte Spiele zurückholen?</summary>
+        <div><p>Ja. In jedem Archivordner kannst du einzelne Spiele per Swipe nach links zurück in die aktuelle Saison verschieben.</p></div>
+    </details>
 
-      <details>
-        <summary>Wo finde ich die Spielstatistiken nach dem Spiel?</summary>
-        <div class="answer">
-          <p>Gehe zum Tab <strong>„Spiele"</strong> und tippe auf ein abgeschlossenes Spiel. Du siehst die vollständige Auswertung mit Timeline, Spielerbewertungen, Ereignissen und Ballbesitz-Verteilung.</p>
-        </div>
-      </details>
+    <details>
+        <summary>Gehen meine Daten bei einem Update verloren?</summary>
+        <div><p>Nein. Die App verwendet rückwärtskompatible Decoder, die sicherstellen, dass alle Daten auch nach einem Update erhalten bleiben.</p></div>
+    </details>
+</section>
 
-      <details>
-        <summary>Was ist das Archiv?</summary>
-        <div class="answer">
-          <p>Im Tab <strong>„Archiv"</strong> kannst du abgeschlossene Saisons ablegen. Du erstellst einen Archiv-Ordner (z.B. „Saison 2025/26"), verschiebst Spiele dorthin und hast sie dauerhaft gesichert — ohne dass sie die aktuelle Spieleliste füllen.</p>
-        </div>
-      </details>
+<!-- ==================== KONTAKT ==================== -->
+<div class="contact">
+    <p>Fragen oder Feedback?</p>
+    <p><a href="mailto:playlytics.app@gmail.com">playlytics.app@gmail.com</a></p>
+    <br>
+    <p style="font-size: 12px; color: var(--secondary);">Playlytics v1.0.6 · Made with ❤️ for Amateurfußball</p>
+</div>
 
-      <details>
-        <summary>Gibt es Statistiken über ein ganzes Archiv? <span class="version-badge">v1.0.5</span></summary>
-        <div class="answer">
-          <p>Ja. Seit Version 1.0.5 hat jeder Archiv-Ordner eine eigene <strong>„Statistik-Übersicht"</strong>. Dort siehst du:</p>
-          <ul>
-            <li>Gesamtbilanz (Siege / Unentschieden / Niederlagen)</li>
-            <li>Tore, Gegentore und Tordifferenz</li>
-            <li>Durchschnittliche Spielerbewertung</li>
-            <li>Detailwerte für Offensive, Defensive, Passspiel, Zweikämpfe, Standards und Disziplin</li>
-          </ul>
-          <p>Den Link findest du oben im jeweiligen Archiv-Ordner.</p>
-        </div>
-      </details>
-
-      <details>
-        <summary>Kann ich Spieler-Statistiken über die ganze Saison sehen?</summary>
-        <div class="answer">
-          <p>Ja. Gehe zum Tab <strong>„Team"</strong> und tippe auf einen Spieler. Du siehst alle Saisonwerte: Tore, Vorlagen, Karten, Zweikämpfe, Pässe und den Notenverlauf über alle Spiele.</p>
-        </div>
-      </details>
-    </div>
-
-    <!-- Dashboard -->
-    <div class="card">
-      <h2><span class="category-icon">🏠</span> Dashboard</h2>
-
-      <details>
-        <summary>Was zeigt das Dashboard an?</summary>
-        <div class="answer">
-          <p>Das Dashboard gibt dir einen schnellen Überblick:</p>
-          <ul>
-            <li><strong>Nächstes Spiel</strong> — Dein nächster anstehender Termin</li>
-            <li><strong>Aktuelle Form</strong> — Die letzten Ergebnisse als Sieg/Unentschieden/Niederlage</li>
-            <li><strong>Saison-Statistiken</strong> — Gesamtbilanz der Saison</li>
-          </ul>
-        </div>
-      </details>
-
-      <details>
-        <summary>Warum wird kein nächstes Spiel angezeigt?</summary>
-        <div class="answer">
-          <p>Das Dashboard zeigt das nächste Spiel nur an, wenn du einen <strong>noch nicht abgeschlossenen Termin</strong> hast. Importiere Termine über den Kalender-Import oder erstelle ein neues Spiel mit einem zukünftigen Datum.</p>
-        </div>
-      </details>
-    </div>
-
-    <!-- iCloud & Sync -->
-    <div class="card">
-      <h2><span class="category-icon">☁️</span> iCloud & Synchronisation</h2>
-
-      <details>
-        <summary>iCloud-Synchronisation funktioniert nicht</summary>
-        <div class="answer">
-          <ol>
-            <li>Prüfe in den <strong>iOS-Einstellungen → Apple-ID → iCloud</strong>, ob du angemeldet bist.</li>
-            <li>Stelle sicher, dass iCloud Drive aktiviert ist.</li>
-            <li>Öffne in der App <strong>Team → Einstellungen → Synchronisation</strong> und wähle <strong>„iCloud"</strong>.</li>
-            <li>Tippe auf <strong>„Jetzt synchronisieren"</strong>.</li>
-          </ol>
-          <p><em>Hinweis: Im Simulator ist iCloud nicht verfügbar. Teste auf einem echten Gerät.</em></p>
-        </div>
-      </details>
-
-      <details>
-        <summary>Gehen meine Daten verloren, wenn ich zwischen Offline und iCloud wechsle?</summary>
-        <div class="answer">
-          <p><strong>Nein.</strong> Deine lokalen Daten bleiben beim Wechsel immer erhalten. Beim Wechsel zu iCloud werden lokale und Cloud-Daten intelligent zusammengeführt — es wird nichts überschrieben.</p>
-        </div>
-      </details>
-
-      <details>
-        <summary>Werden auch Archive synchronisiert?</summary>
-        <div class="answer">
-          <p><strong>Ja.</strong> Archive werden vollständig über iCloud synchronisiert. Beim Merge werden Archive beider Seiten (lokal und Cloud) zusammengeführt — kein Archiv geht verloren. Archive werden per ID dedupliziert, sodass keine Duplikate entstehen.</p>
-        </div>
-      </details>
-
-      <details>
-        <summary>Kann ich die App auf mehreren Geräten nutzen?</summary>
-        <div class="answer">
-          <p>Ja, wenn du die iCloud-Synchronisation aktivierst. Deine Daten werden über deine private iCloud zwischen deinen Geräten synchronisiert. Die Synchronisation erfolgt beim App-Start und kann jederzeit manuell ausgelöst werden.</p>
-        </div>
-      </details>
-
-      <details>
-        <summary>Ich möchte komplett offline bleiben</summary>
-        <div class="answer">
-          <p>Gehe zu <strong>Team → Einstellungen → Synchronisation</strong> und wähle <strong>„Offline"</strong>. Deine Daten werden nur lokal auf deinem Gerät gespeichert. Es werden keine Daten übertragen.</p>
-        </div>
-      </details>
-    </div>
-
-    <!-- Kalender-Import -->
-    <div class="card">
-      <h2><span class="category-icon">📅</span> Kalender-Import</h2>
-
-      <details>
-        <summary>Wie importiere ich Spieltermine?</summary>
-        <div class="answer">
-          <ol>
-            <li>Besorge dir die <strong>Kalender-URL (ICS)</strong> deines Vereins (z.B. von der Vereins-Website oder dem Verband).</li>
-            <li>Gehe zu <strong>Team → Einstellungen → Kalender-Import</strong>.</li>
-            <li>Füge die URL ein und tippe auf <strong>„Importieren"</strong>.</li>
-            <li>Die Termine erscheinen als neue Spiele in deiner Spieleliste.</li>
-          </ol>
-        </div>
-      </details>
-
-      <details>
-        <summary>Der Kalender-Import schlägt fehl</summary>
-        <div class="answer">
-          <ol>
-            <li>Prüfe, ob die URL korrekt ist (beginnt mit <code>http://</code> oder <code>https://</code>).</li>
-            <li>Stelle sicher, dass dein Gerät eine Internetverbindung hat.</li>
-            <li>Manche Kalender-URLs erfordern eine Anmeldung — diese werden aktuell nicht unterstützt.</li>
-            <li>Teste die URL in einem Browser: Wird eine <code>.ics</code>-Datei heruntergeladen?</li>
-          </ol>
-          <p>Falls es weiterhin nicht funktioniert, sende uns die URL per E-Mail und wir prüfen das Format.</p>
-        </div>
-      </details>
-
-      <details>
-        <summary>Werden importierte Termine automatisch aktualisiert?</summary>
-        <div class="answer">
-          <p>Importierte Termine werden <strong>nicht</strong> automatisch aktualisiert. Um neue oder geänderte Termine zu laden, tippe erneut auf <strong>„Importieren"</strong>. Bereits vorhandene Termine werden dabei erkannt und nicht doppelt angelegt.</p>
-        </div>
-      </details>
-    </div>
-
-    <!-- Fehlerbehebung -->
-    <div class="card">
-      <h2><span class="category-icon">🔧</span> Fehlerbehebung</h2>
-
-      <details>
-        <summary>Die App zeigt keine Daten / ist leer</summary>
-        <div class="answer">
-          <ol>
-            <li>Beende die App vollständig (aus dem App-Switcher entfernen) und starte sie neu.</li>
-            <li>Falls du iCloud nutzt: Gehe zu <strong>Einstellungen → Synchronisation</strong> und tippe auf <strong>„Jetzt synchronisieren"</strong>.</li>
-            <li>Prüfe unter <strong>iOS-Einstellungen → Allgemein → iPhone-Speicher</strong>, ob genügend Speicherplatz vorhanden ist.</li>
-          </ol>
-        </div>
-      </details>
-
-      <details>
-        <summary>Ein laufendes Spiel kann nicht fortgesetzt werden</summary>
-        <div class="answer">
-          <p>Nicht abgeschlossene Spiele werden beim nächsten App-Start automatisch fortgesetzt. Falls das nicht funktioniert:</p>
-          <ol>
-            <li>Gehe zum Tab <strong>„Neues Spiel"</strong> — dort sollte das laufende Spiel angezeigt werden.</li>
-            <li>Falls nicht: Prüfe im Tab <strong>„Spiele"</strong>, ob das Spiel dort als „offen" gelistet ist, und tippe es an.</li>
-          </ol>
-        </div>
-      </details>
-
-      <details>
-        <summary>Spieler oder Spiele sind verschwunden</summary>
-        <div class="answer">
-          <ol>
-            <li>Prüfe, ob du versehentlich eine <strong>Saison archiviert</strong> hast — schaue im Tab <strong>„Archiv"</strong>.</li>
-            <li>Falls du iCloud nutzt und kürzlich das Gerät gewechselt hast: Synchronisiere manuell über <strong>Einstellungen → Synchronisation → Jetzt synchronisieren</strong>.</li>
-            <li>Falls das Problem bestehen bleibt, kontaktiere uns mit einer Beschreibung — wir helfen dir, die Daten wiederherzustellen.</li>
-          </ol>
-        </div>
-      </details>
-
-      <details>
-        <summary>Die App reagiert langsam oder friert ein</summary>
-        <div class="answer">
-          <ol>
-            <li>Beende die App vollständig und starte sie neu.</li>
-            <li>Stelle sicher, dass dein Gerät auf dem neuesten iOS-Stand ist.</li>
-            <li>Bei sehr vielen Spielen (50+): Erwäge, ältere Saisons zu archivieren.</li>
-          </ol>
-        </div>
-      </details>
-
-      <details>
-        <summary>Scout-Auswechslungen werden nicht in der Statistik angezeigt <span class="version-badge">v1.0.6</span></summary>
-        <div class="answer">
-          <p>Stelle sicher, dass du mindestens <strong>Version 1.0.6</strong> installiert hast. In älteren Versionen werden Spieler, die über Scout-Auswechslungen zur Aufstellung hinzugefügt wurden, möglicherweise nicht in den Statistiken und Timeline-Filtern angezeigt.</p>
-          <p>Aktualisiere die App über den App Store, um das Problem zu beheben.</p>
-        </div>
-      </details>
-    </div>
-
-    <!-- Kontakt unten -->
-    <div class="card center">
-      <h2>Noch Fragen?</h2>
-      <p>Wir antworten in der Regel innerhalb von 24 Stunden.</p>
-      <div class="mt-12">
-        <a class="btn primary" href="mailto:playlyticsdev@gmail.com"><span class="icon">✉️</span>E-Mail an Support</a>
-      </div>
-    </div>
-
-  </main>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2026 Playlytics DEV · <a href="./privacy.html">Datenschutz</a></p>
-    </div>
-  </footer>
 </body>
 </html>
