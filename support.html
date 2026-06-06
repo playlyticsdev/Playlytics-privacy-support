@@ -96,12 +96,12 @@
   <!-- Inhalt -->
   <main class="container section">
 
-    <!-- Neu in 1.0.5 -->
+    <!-- Neu in 1.0.6 -->
     <div class="card">
-      <h2><span class="category-icon">🆕</span> Neu in Version 1.0.5</h2>
+      <h2><span class="category-icon">🆕</span> Neu in Version 1.0.6</h2>
 
       <details open>
-        <summary>Scout-Auswechslungen <span class="version-badge">v1.0.5</span></summary>
+        <summary>Scout-Auswechslungen <span class="version-badge">v1.0.6</span></summary>
         <div class="answer">
           <p>Im <strong>Scout-Modus</strong> stehen jetzt Auswechslungs-Funktionen zur Verfügung:</p>
           <ul>
@@ -112,6 +112,22 @@
           <p><em>Hinweis: Im Scout-Modus gibt es keine Auswechselbank — Spieler werden direkt ein- oder ausgewechselt.</em></p>
         </div>
       </details>
+
+      <details>
+        <summary>Verbesserter iCloud-Sync <span class="version-badge">v1.0.6</span></summary>
+        <div class="answer">
+          <p>Der manuelle iCloud-Sync wurde verbessert:</p>
+          <ul>
+            <li>Vor dem Upload werden lokale und Cloud-Daten automatisch zusammengeführt (<strong>Merge-before-Upload</strong>).</li>
+            <li>Das Risiko von Datenverlusten bei gleichzeitiger Nutzung auf mehreren Geräten wurde deutlich reduziert.</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+
+    <!-- Neu in 1.0.5 -->
+    <div class="card">
+      <h2><span class="category-icon">📦</span> Neu in Version 1.0.5</h2>
 
       <details>
         <summary>Archiv-Statistiken <span class="version-badge">v1.0.5</span></summary>
@@ -169,7 +185,7 @@
         <summary>Was ist der Unterschied zwischen Coach und Scout?</summary>
         <div class="answer">
           <p><strong>Coach-Modus:</strong> Du verwaltest dein eigenes Team mit exakt 11 Startspielern und Auswechselbank. Wechsel, Ballbesitz und alle Statistiken stehen zur Verfügung.</p>
-          <p><strong>Scout-Modus:</strong> Du beobachtest ein beliebiges Spiel. Die Spieleranzahl ist flexibel, es gibt keine feste Auswechselbank. Seit Version 1.0.5 kannst du auch im Scout-Modus Spieler ein- und auswechseln. Ideal für gegnerische Teams oder Talentsichtung.</p>
+          <p><strong>Scout-Modus:</strong> Du beobachtest ein beliebiges Spiel. Die Spieleranzahl ist flexibel, es gibt keine feste Auswechselbank. Seit Version 1.0.6 kannst du auch im Scout-Modus Spieler ein- und auswechseln. Ideal für gegnerische Teams oder Talentsichtung.</p>
         </div>
       </details>
 
@@ -215,7 +231,7 @@
             <li>Wähle den Einwechselspieler von der Bank aus.</li>
             <li>Die Auswechslung wird automatisch in der Timeline erfasst.</li>
           </ol>
-          <p><strong>Im Scout-Modus</strong> <span class="version-badge">v1.0.5</span><strong>:</strong></p>
+          <p><strong>Im Scout-Modus</strong> <span class="version-badge">v1.0.6</span><strong>:</strong></p>
           <ol>
             <li>Tippe auf einen Spieler und wähle <strong>„Auswechseln"</strong>, um ihn als ausgewechselt zu markieren.</li>
             <li>Nutze <strong>„Spieler einwechseln"</strong>, um einen neuen Spieler zur Aufstellung hinzuzufügen.</li>
@@ -440,354 +456,10 @@
       </details>
 
       <details>
-        <summary>Scout-Auswechslungen werden nicht in der Statistik angezeigt <span class="version-badge">v1.0.5</span></summary>
+        <summary>Scout-Auswechslungen werden nicht in der Statistik angezeigt <span class="version-badge">v1.0.6</span></summary>
         <div class="answer">
-          <p>Stelle sicher, dass du mindestens <strong>Version 1.0.5</strong> installiert hast. In älteren Versionen werden Spieler, die über Scout-Auswechslungen zur Aufstellung hinzugefügt wurden, möglicherweise nicht in den Statistiken und Timeline-Filtern angezeigt.</p>
+          <p>Stelle sicher, dass du mindestens <strong>Version 1.0.6</strong> installiert hast. In älteren Versionen werden Spieler, die über Scout-Auswechslungen zur Aufstellung hinzugefügt wurden, möglicherweise nicht in den Statistiken und Timeline-Filtern angezeigt.</p>
           <p>Aktualisiere die App über den App Store, um das Problem zu beheben.</p>
-        </div>
-      </details>
-    </div>
-
-    <!-- Kontakt unten -->
-    <div class="card center">
-      <h2>Noch Fragen?</h2>
-      <p>Wir antworten in der Regel innerhalb von 24 Stunden.</p>
-      <div class="mt-12">
-        <a class="btn primary" href="mailto:playlyticsdev@gmail.com"><span class="icon">✉️</span>E-Mail an Support</a>
-      </div>
-    </div>
-
-  </main>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2026 Playlytics DEV · <a href="./privacy.html">Datenschutz</a></p>
-    </div>
-  </footer>
-</body>
-</html>      margin-top: 10px;
-      padding-left: 22px;
-      color: var(--color-muted);
-      line-height: 1.7;
-    }
-    details .answer ol,
-    details .answer ul {
-      padding-left: 18px;
-      margin: 8px 0;
-    }
-    details .answer li {
-      margin-bottom: 4px;
-    }
-    details .answer code {
-      background: var(--color-primary-weak);
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-size: 0.9em;
-    }
-    .category-icon {
-      font-size: 1.15em;
-    }
-  </style>
-</head>
-<body>
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container inner">
-      <a class="brand" href="./">
-        <img class="logo" src="./AppIcon.png" alt="Playlytics Logo" />
-        <span class="title">Playlytics</span>
-      </a>
-      <nav>
-        <a class="btn" href="./index.html"><span class="icon">🏠</span>Start</a>
-        <a class="btn" href="./privacy.html"><span class="icon">🛡️</span>DSGVO</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container">
-      <div class="badge">Hilfe & Kontakt</div>
-      <h1>Support & FAQ</h1>
-      <p>Antworten auf häufige Fragen und Lösungen bei Problemen.</p>
-    </div>
-  </section>
-
-  <!-- Inhalt -->
-  <main class="container section">
-
-    <!-- Kontakt -->
-    <div class="card">
-      <h2>📬 Kontakt</h2>
-      <p>Du findest keine Lösung? Schreibe uns — bitte mit kurzer Problembeschreibung und deiner App-Version (findest du unter <em>Team → Info</em>).</p>
-      <div class="mt-12">
-        <a class="btn primary" href="mailto:playlyticsdev@gmail.com"><span class="icon">✉️</span>playlyticsdev@gmail.com</a>
-      </div>
-    </div>
-
-    <!-- Erste Schritte -->
-    <div class="card">
-      <h2><span class="category-icon">🚀</span> Erste Schritte</h2>
-
-      <details>
-        <summary>Wie starte ich mein erstes Spiel?</summary>
-        <div class="answer">
-          <ol>
-            <li>Gehe zum Tab <strong>„Neues Spiel"</strong>.</li>
-            <li>Wähle den Modus: <strong>Coach</strong> (volle Aufstellung mit 11 Spielern) oder <strong>Scout</strong> (freie Spieleranzahl, Beobachtermodus).</li>
-            <li>Gib den Gegner-Namen ein und wähle Heim oder Auswärts.</li>
-            <li>Tippe auf <strong>„Aufstellung wählen"</strong> und wähle deine Spieler aus.</li>
-            <li>Tippe auf <strong>„Spiel starten"</strong>.</li>
-          </ol>
-        </div>
-      </details>
-
-      <details>
-        <summary>Was ist der Unterschied zwischen Coach und Scout?</summary>
-        <div class="answer">
-          <p><strong>Coach-Modus:</strong> Du verwaltest dein eigenes Team mit exakt 11 Startspielern und Auswechselbank. Wechsel, Ballbesitz und alle Statistiken stehen zur Verfügung.</p>
-          <p><strong>Scout-Modus:</strong> Du beobachtest ein beliebiges Spiel. Die Spieleranzahl ist flexibel, es gibt keine Auswechselbank. Ideal für gegnerische Teams oder Talentsichtung.</p>
-        </div>
-      </details>
-
-      <details>
-        <summary>Wie lege ich Spieler an?</summary>
-        <div class="answer">
-          <ol>
-            <li>Gehe zum Tab <strong>„Team"</strong>.</li>
-            <li>Tippe auf <strong>„+"</strong> oben rechts.</li>
-            <li>Gib Name, Trikotnummer und bevorzugte Position(en) ein.</li>
-            <li>Bestätige mit <strong>„Speichern"</strong>.</li>
-          </ol>
-        </div>
-      </details>
-    </div>
-
-    <!-- Während des Spiels -->
-    <div class="card">
-      <h2><span class="category-icon">⚽</span> Während des Spiels</h2>
-
-      <details>
-        <summary>Wie erfasse ich Spieleraktionen (Tore, Karten, Pässe, Zweikämpfe)?</summary>
-        <div class="answer">
-          <p>Tippe in der Aufstellungsliste auf einen Spieler. Es öffnet sich die <strong>Bewertungsansicht</strong> mit allen verfügbaren Aktionen (Tor, Vorlage, Gelbe/Rote Karte, Pass, Zweikampf usw.).</p>
-          <p><strong>Tipp:</strong> Nutze die <strong>Schnellbewertung</strong> (Blitz-Symbol ⚡ oben rechts) für schnelles Erfassen — dort siehst du alle Aktionen als kompakte Symbole.</p>
-        </div>
-      </details>
-
-      <details>
-        <summary>Wie funktioniert der Ballbesitz?</summary>
-        <div class="answer">
-          <p>Im Spielbildschirm findest du den Bereich <strong>„Ballbesitz"</strong>. Tippe auf <strong>„Team"</strong> oder <strong>„Gegner"</strong>, je nachdem wer den Ball hat. Die App zählt die Sekunden automatisch mit.</p>
-          <p>Mit <strong>„Auto-Ballbesitz"</strong> wird der Besitz bei bestimmten Aktionen (z.B. Pass, Zweikampf gewonnen) automatisch aktualisiert.</p>
-        </div>
-      </details>
-
-      <details>
-        <summary>Wie mache ich eine Auswechslung?</summary>
-        <div class="answer">
-          <ol>
-            <li>Tippe auf das <strong>Wechsel-Symbol</strong> (⇄) neben dem Spieler, der ausgewechselt werden soll.</li>
-            <li>Wähle den Einwechselspieler von der Bank aus.</li>
-            <li>Die Auswechslung wird automatisch in der Timeline erfasst.</li>
-          </ol>
-          <p><em>Hinweis: Auswechslungen sind nur im Coach-Modus verfügbar.</em></p>
-        </div>
-      </details>
-
-      <details>
-        <summary>Wie funktioniert die Halbzeit / Spielende?</summary>
-        <div class="answer">
-          <p>Nutze die drei Buttons oben im Spielbildschirm:</p>
-          <ul>
-            <li><strong>Start</strong> — Startet die Uhr</li>
-            <li><strong>Pause</strong> — Pausiert die Uhr (z.B. bei Verletzungsunterbrechung)</li>
-            <li><strong>Halbzeit / Spielende</strong> — Beendet die aktuelle Halbzeit. In der 2. Halbzeit wird damit das Spiel abgeschlossen.</li>
-          </ul>
-          <p>Die App erkennt automatisch, ob du in der 1. oder 2. Halbzeit bist und zeigt die Nachspielzeit korrekt an.</p>
-        </div>
-      </details>
-
-      <details>
-        <summary>Kann ich eine Aktion rückgängig machen?</summary>
-        <div class="answer">
-          <p>Ja. Tippe auf den <strong>Rückgängig-Pfeil</strong> (↩) oben rechts im Spielbildschirm. Die letzte Aktion wird aus der Timeline entfernt.</p>
-        </div>
-      </details>
-    </div>
-
-    <!-- Statistiken & Archiv -->
-    <div class="card">
-      <h2><span class="category-icon">📊</span> Statistiken & Archiv</h2>
-
-      <details>
-        <summary>Wo finde ich die Spielstatistiken nach dem Spiel?</summary>
-        <div class="answer">
-          <p>Gehe zum Tab <strong>„Spiele"</strong> und tippe auf ein abgeschlossenes Spiel. Du siehst die vollständige Auswertung mit Timeline, Spielerbewertungen, Ereignissen und Ballbesitz-Verteilung.</p>
-        </div>
-      </details>
-
-      <details>
-        <summary>Was ist das Archiv?</summary>
-        <div class="answer">
-          <p>Im Tab <strong>„Archiv"</strong> kannst du abgeschlossene Saisons ablegen. Du erstellst einen Archiv-Ordner (z.B. „Saison 2025/26"), verschiebst Spiele dorthin und hast sie dauerhaft gesichert — ohne dass sie die aktuelle Spieleliste füllen.</p>
-        </div>
-      </details>
-
-      <details>
-        <summary>Kann ich Spieler-Statistiken über die ganze Saison sehen?</summary>
-        <div class="answer">
-          <p>Ja. Gehe zum Tab <strong>„Team"</strong> und tippe auf einen Spieler. Du siehst alle Saisonwerte: Tore, Vorlagen, Karten, Zweikämpfe, Pässe und den Notenverlauf über alle Spiele.</p>
-        </div>
-      </details>
-    </div>
-
-    <!-- Dashboard -->
-    <div class="card">
-      <h2><span class="category-icon">🏠</span> Dashboard</h2>
-
-      <details>
-        <summary>Was zeigt das Dashboard an?</summary>
-        <div class="answer">
-          <p>Das Dashboard gibt dir einen schnellen Überblick:</p>
-          <ul>
-            <li><strong>Nächstes Spiel</strong> — Dein nächster anstehender Termin</li>
-            <li><strong>Aktuelle Form</strong> — Die letzten Ergebnisse als Sieg/Unentschieden/Niederlage</li>
-            <li><strong>Saison-Statistiken</strong> — Gesamtbilanz der Saison</li>
-          </ul>
-        </div>
-      </details>
-
-      <details>
-        <summary>Warum wird kein nächstes Spiel angezeigt?</summary>
-        <div class="answer">
-          <p>Das Dashboard zeigt das nächste Spiel nur an, wenn du einen <strong>noch nicht abgeschlossenen Termin</strong> hast. Importiere Termine über den Kalender-Import oder erstelle ein neues Spiel mit einem zukünftigen Datum.</p>
-        </div>
-      </details>
-    </div>
-
-    <!-- iCloud & Sync -->
-    <div class="card">
-      <h2><span class="category-icon">☁️</span> iCloud & Synchronisation</h2>
-
-      <details>
-        <summary>iCloud-Synchronisation funktioniert nicht</summary>
-        <div class="answer">
-          <ol>
-            <li>Prüfe in den <strong>iOS-Einstellungen → Apple-ID → iCloud</strong>, ob du angemeldet bist.</li>
-            <li>Stelle sicher, dass iCloud Drive aktiviert ist.</li>
-            <li>Öffne in der App <strong>Team → Einstellungen → Synchronisation</strong> und wähle <strong>„iCloud"</strong>.</li>
-            <li>Tippe auf <strong>„Jetzt synchronisieren"</strong>.</li>
-          </ol>
-          <p><em>Hinweis: Im Simulator ist iCloud nicht verfügbar. Teste auf einem echten Gerät.</em></p>
-        </div>
-      </details>
-
-      <details>
-        <summary>Gehen meine Daten verloren, wenn ich zwischen Offline und iCloud wechsle?</summary>
-        <div class="answer">
-          <p><strong>Nein.</strong> Deine lokalen Daten bleiben beim Wechsel immer erhalten. Beim Wechsel zu iCloud werden lokale und Cloud-Daten intelligent zusammengeführt — es wird nichts überschrieben.</p>
-        </div>
-      </details>
-
-      <details>
-        <summary>Kann ich die App auf mehreren Geräten nutzen?</summary>
-        <div class="answer">
-          <p>Ja, wenn du die iCloud-Synchronisation aktivierst. Deine Daten werden über deine private iCloud zwischen deinen Geräten synchronisiert. Die Synchronisation erfolgt beim App-Start und kann jederzeit manuell ausgelöst werden.</p>
-        </div>
-      </details>
-
-      <details>
-        <summary>Ich möchte komplett offline bleiben</summary>
-        <div class="answer">
-          <p>Gehe zu <strong>Team → Einstellungen → Synchronisation</strong> und wähle <strong>„Offline"</strong>. Deine Daten werden nur lokal auf deinem Gerät gespeichert. Es werden keine Daten übertragen.</p>
-        </div>
-      </details>
-    </div>
-
-    <!-- Kalender-Import -->
-    <div class="card">
-      <h2><span class="category-icon">📅</span> Kalender-Import</h2>
-
-      <details>
-        <summary>Wie importiere ich Spieltermine?</summary>
-        <div class="answer">
-          <ol>
-            <li>Besorge dir die <strong>Kalender-URL (ICS)</strong> deines Vereins (z.B. von der Vereins-Website oder dem Verband).</li>
-            <li>Gehe zu <strong>Team → Einstellungen → Kalender-Import</strong>.</li>
-            <li>Füge die URL ein und tippe auf <strong>„Importieren"</strong>.</li>
-            <li>Die Termine erscheinen als neue Spiele in deiner Spieleliste.</li>
-          </ol>
-        </div>
-      </details>
-
-      <details>
-        <summary>Der Kalender-Import schlägt fehl</summary>
-        <div class="answer">
-          <ol>
-            <li>Prüfe, ob die URL korrekt ist (beginnt mit <code>http://</code> oder <code>https://</code>).</li>
-            <li>Stelle sicher, dass dein Gerät eine Internetverbindung hat.</li>
-            <li>Manche Kalender-URLs erfordern eine Anmeldung — diese werden aktuell nicht unterstützt.</li>
-            <li>Teste die URL in einem Browser: Wird eine <code>.ics</code>-Datei heruntergeladen?</li>
-          </ol>
-          <p>Falls es weiterhin nicht funktioniert, sende uns die URL per E-Mail und wir prüfen das Format.</p>
-        </div>
-      </details>
-
-      <details>
-        <summary>Werden importierte Termine automatisch aktualisiert?</summary>
-        <div class="answer">
-          <p>Importierte Termine werden <strong>nicht</strong> automatisch aktualisiert. Um neue oder geänderte Termine zu laden, tippe erneut auf <strong>„Importieren"</strong>. Bereits vorhandene Termine werden dabei erkannt und nicht doppelt angelegt.</p>
-        </div>
-      </details>
-    </div>
-
-    <!-- Fehlerbehebung -->
-    <div class="card">
-      <h2><span class="category-icon">🔧</span> Fehlerbehebung</h2>
-
-      <details>
-        <summary>Die App zeigt keine Daten / ist leer</summary>
-        <div class="answer">
-          <ol>
-            <li>Beende die App vollständig (aus dem App-Switcher entfernen) und starte sie neu.</li>
-            <li>Falls du iCloud nutzt: Gehe zu <strong>Einstellungen → Synchronisation</strong> und tippe auf <strong>„Jetzt synchronisieren"</strong>.</li>
-            <li>Prüfe unter <strong>iOS-Einstellungen → Allgemein → iPhone-Speicher</strong>, ob genügend Speicherplatz vorhanden ist.</li>
-          </ol>
-        </div>
-      </details>
-
-      <details>
-        <summary>Ein laufendes Spiel kann nicht fortgesetzt werden</summary>
-        <div class="answer">
-          <p>Nicht abgeschlossene Spiele werden beim nächsten App-Start automatisch fortgesetzt. Falls das nicht funktioniert:</p>
-          <ol>
-            <li>Gehe zum Tab <strong>„Neues Spiel"</strong> — dort sollte das laufende Spiel angezeigt werden.</li>
-            <li>Falls nicht: Prüfe im Tab <strong>„Spiele"</strong>, ob das Spiel dort als „offen" gelistet ist, und tippe es an.</li>
-          </ol>
-        </div>
-      </details>
-
-      <details>
-        <summary>Spieler oder Spiele sind verschwunden</summary>
-        <div class="answer">
-          <ol>
-            <li>Prüfe, ob du versehentlich eine <strong>Saison archiviert</strong> hast — schaue im Tab <strong>„Archiv"</strong>.</li>
-            <li>Falls du iCloud nutzt und kürzlich das Gerät gewechselt hast: Synchronisiere manuell über <strong>Einstellungen → Synchronisation → Jetzt synchronisieren</strong>.</li>
-            <li>Falls das Problem bestehen bleibt, kontaktiere uns mit einer Beschreibung — wir helfen dir, die Daten wiederherzustellen.</li>
-          </ol>
-        </div>
-      </details>
-
-      <details>
-        <summary>Die App reagiert langsam oder friert ein</summary>
-        <div class="answer">
-          <ol>
-            <li>Beende die App vollständig und starte sie neu.</li>
-            <li>Stelle sicher, dass dein Gerät auf dem neuesten iOS-Stand ist.</li>
-            <li>Bei sehr vielen Spielen (50+): Erwäge, ältere Saisons zu archivieren.</li>
-          </ol>
         </div>
       </details>
     </div>
