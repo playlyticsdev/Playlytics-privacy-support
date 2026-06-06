@@ -1,350 +1,198 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Playlytics – Support & Hilfe</title>
-    <style>
-        :root {
-            --bg: #f5f5f7;
-            --card: #ffffff;
-            --text: #1d1d1f;
-            --secondary: #6e6e73;
-            --accent: #0071e3;
-            --green: #34c759;
-            --orange: #ff9500;
-            --red: #ff3b30;
-            --border: #d2d2d7;
-            --code-bg: #f0f0f5;
-        }
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg: #1c1c1e;
-                --card: #2c2c2e;
-                --text: #f5f5f7;
-                --secondary: #98989d;
-                --border: #3a3a3c;
-                --code-bg: #3a3a3c;
-            }
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            padding: 20px;
-            max-width: 720px;
-            margin: 0 auto;
-        }
-        header {
-            text-align: center;
-            padding: 40px 0 30px;
-        }
-        header h1 {
-            font-size: 28px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-        header p {
-            color: var(--secondary);
-            font-size: 15px;
-            margin-top: 4px;
-        }
-        .version-badge {
-            display: inline-block;
-            background: var(--accent);
-            color: white;
-            font-size: 12px;
-            font-weight: 600;
-            padding: 3px 10px;
-            border-radius: 12px;
-            margin-top: 10px;
-        }
-        nav {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            justify-content: center;
-            margin-bottom: 30px;
-        }
-        nav a {
-            font-size: 13px;
-            color: var(--accent);
-            text-decoration: none;
-            padding: 5px 12px;
-            border-radius: 14px;
-            background: var(--card);
-            border: 1px solid var(--border);
-            transition: background .2s;
-        }
-        nav a:hover { background: var(--accent); color: white; }
-        section {
-            background: var(--card);
-            border-radius: 14px;
-            padding: 24px;
-            margin-bottom: 16px;
-            border: 1px solid var(--border);
-        }
-        h2 {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 14px;
-            letter-spacing: -0.3px;
-        }
-        h3 {
-            font-size: 16px;
-            font-weight: 600;
-            margin: 16px 0 8px;
-        }
-        p, li { font-size: 15px; color: var(--text); }
-        ul { padding-left: 20px; margin: 8px 0; }
-        li { margin-bottom: 6px; }
-        details {
-            margin: 10px 0;
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        summary {
-            padding: 12px 16px;
-            font-weight: 600;
-            font-size: 15px;
-            cursor: pointer;
-            background: var(--code-bg);
-        }
-        details > div { padding: 12px 16px; }
-        .tag {
-            display: inline-block;
-            font-size: 11px;
-            font-weight: 600;
-            padding: 2px 8px;
-            border-radius: 8px;
-            margin-left: 6px;
-            vertical-align: middle;
-        }
-        .tag-new { background: var(--green); color: white; }
-        .tag-improved { background: var(--accent); color: white; }
-        .tag-fix { background: var(--orange); color: white; }
-        .tip {
-            background: #e8f5e9;
-            border-left: 4px solid var(--green);
-            padding: 12px 16px;
-            border-radius: 0 10px 10px 0;
-            margin: 12px 0;
-            font-size: 14px;
-        }
-        .warning {
-            background: #fff3e0;
-            border-left: 4px solid var(--orange);
-            padding: 12px 16px;
-            border-radius: 0 10px 10px 0;
-            margin: 12px 0;
-            font-size: 14px;
-        }
-        @media (prefers-color-scheme: dark) {
-            .tip { background: #1b3a1b; }
-            .warning { background: #3a2a1b; }
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 12px 0;
-            font-size: 14px;
-        }
-        th, td {
-            padding: 8px 10px;
-            text-align: left;
-            border-bottom: 1px solid var(--border);
-        }
-        th {
-            font-weight: 600;
-            font-size: 13px;
-            color: var(--secondary);
-        }
-        .contact {
-            text-align: center;
-            padding: 30px 0;
-        }
-        .contact a {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 600;
-        }
-        .emoji { font-size: 18px; margin-right: 6px; }
-    </style>
+  <meta charset="utf-8">
+  <title>Support & Hilfe – Playlytics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container inner">
+      <a class="brand" href="./">
+        <img class="logo" src="./AppIcon.png" alt="Playlytics Logo" />
+        <span class="title">Playlytics</span>
+      </a>
+      <nav>
+        <a class="btn" href="./index.html"><span class="icon">🏠</span>Start</a>
+        <a class="btn" href="./datenschutz.html"><span class="icon">🔒</span>Datenschutz</a>
+      </nav>
+    </div>
+  </header>
 
-<header>
-    <h1>Playlytics</h1>
-    <p>Live-Analyse für Amateurfußball</p>
-    <span class="version-badge">v1.0.6</span>
-</header>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="badge">v1.0.6</div>
+      <h1>Support & Hilfe</h1>
+      <p class="m-0">Live-Analyse für Amateurfußball</p>
+    </div>
+  </section>
 
-<nav>
-    <a href="#new">Neu in 1.0.6</a>
-    <a href="#basics">Grundlagen</a>
-    <a href="#match">Spielerfassung</a>
-    <a href="#stats">Statistiken</a>
-    <a href="#trends">Trends & Coaching</a>
-    <a href="#archive">Archiv</a>
-    <a href="#pdf">PDF-Export</a>
-    <a href="#icloud">iCloud</a>
-    <a href="#faq">FAQ</a>
-</nav>
+  <!-- Inhaltsnavigation -->
+  <nav class="container section" style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;">
+    <a class="btn" href="#new">Neu in 1.0.6</a>
+    <a class="btn" href="#basics">Grundlagen</a>
+    <a class="btn" href="#match">Spielerfassung</a>
+    <a class="btn" href="#stats">Statistiken</a>
+    <a class="btn" href="#trends">Trends & Coaching</a>
+    <a class="btn" href="#archive">Archiv</a>
+    <a class="btn" href="#pdf">PDF-Export</a>
+    <a class="btn" href="#icloud">iCloud</a>
+    <a class="btn" href="#faq">FAQ</a>
+  </nav>
 
-<!-- ==================== NEU IN 1.0.6 ==================== -->
-<section id="new">
-    <h2><span class="emoji">🆕</span>Neu in Version 1.0.6</h2>
+  <!-- Inhalt -->
+  <main class="container section">
 
-    <details>
-        <summary>PDF-Saisonbericht <span class="tag tag-new">Neu</span></summary>
+    <!-- ==================== NEU IN 1.0.6 ==================== -->
+    <div class="card" id="new">
+      <h2>🆕 Neu in Version 1.0.6</h2>
+
+      <details>
+        <summary>PDF-Saisonbericht <span class="badge">Neu</span></summary>
         <div>
-            <p>Erstelle professionelle PDF-Berichte deiner gesamten Saison. Der Bericht enthält eine Saisonübersicht mit allen wichtigen Kennzahlen sowie detaillierte Spielerstatistiken auf separaten Seiten.</p>
-            <p>Zu finden unter: <strong>Spiele → PDF-Export-Button</strong></p>
+          <p>Erstelle professionelle PDF-Berichte deiner gesamten Saison. Der Bericht enthält eine Saisonübersicht mit allen wichtigen Kennzahlen sowie detaillierte Spielerstatistiken auf separaten Seiten.</p>
+          <p>Zu finden unter: <strong>Spiele → PDF-Export-Button</strong></p>
         </div>
-    </details>
+      </details>
 
-    <details>
-        <summary>Coaching-Analyse mit 21 Insights <span class="tag tag-new">Neu</span></summary>
+      <details>
+        <summary>Coaching-Analyse mit 21 Insights <span class="badge">Neu</span></summary>
         <div>
-            <p>Automatische Analyse der letzten 5 Spiele mit intelligenten Empfehlungen. Von Formtief-Erkennung über Verletzungsanfälligkeit bis hin zu Zweikampfquoten – die App erkennt Trends und gibt Handlungsempfehlungen.</p>
-            <p>Neu: Filtere die Analysen nach <strong>Alle</strong>, <strong>Coach</strong> oder <strong>Scout</strong>, um nur relevante Insights für deinen Anwendungsfall zu sehen.</p>
+          <p>Automatische Analyse der letzten 5 Spiele mit intelligenten Empfehlungen. Von Formtief-Erkennung über Verletzungsanfälligkeit bis hin zu Zweikampfquoten – die App erkennt Trends und gibt Handlungsempfehlungen.</p>
+          <p>Neu: Filtere die Analysen nach <strong>Alle</strong>, <strong>Coach</strong> oder <strong>Scout</strong>, um nur relevante Insights für deinen Anwendungsfall zu sehen.</p>
         </div>
-    </details>
+      </details>
 
-    <details>
-        <summary>Scout-Modus Filter <span class="tag tag-new">Neu</span></summary>
+      <details>
+        <summary>Scout-Modus Filter <span class="badge">Neu</span></summary>
         <div>
-            <p>Die Coaching-Analyse unterscheidet jetzt zwischen Trainer- und Scout-relevanten Insights. Im Scout-Filter siehst du nur die Analysen, die für die Gegnerbeobachtung relevant sind. Jeder Filter zeigt eine Erklärung an.</p>
+          <p>Die Coaching-Analyse unterscheidet jetzt zwischen Trainer- und Scout-relevanten Insights. Im Scout-Filter siehst du nur die Analysen, die für die Gegnerbeobachtung relevant sind. Jeder Filter zeigt eine Erklärung an.</p>
         </div>
-    </details>
+      </details>
 
-    <details>
-        <summary>Spielervergleich & Trends <span class="tag tag-new">Neu</span></summary>
+      <details>
+        <summary>Spielervergleich & Trends <span class="badge">Neu</span></summary>
         <div>
-            <p>Vergleiche zwei Spieler direkt miteinander – über alle wichtigen Kennzahlen wie Note, Tore, Vorlagen, Zweikämpfe und mehr. Ein Notenvergleichsdiagramm zeigt die Entwicklung über die Saison.</p>
+          <p>Vergleiche zwei Spieler direkt miteinander – über alle wichtigen Kennzahlen wie Note, Tore, Vorlagen, Zweikämpfe und mehr. Ein Notenvergleichsdiagramm zeigt die Entwicklung über die Saison.</p>
         </div>
-    </details>
+      </details>
 
-    <details>
-        <summary>Teamform-Diagramm <span class="tag tag-new">Neu</span></summary>
+      <details>
+        <summary>Teamform-Diagramm <span class="badge">Neu</span></summary>
         <div>
-            <p>Visualisiert die Tordifferenz aller Saisonspiele als Balkendiagramm. Die letzten 5 Ergebnisse werden als S/U/N-Badges (Sieg/Unentschieden/Niederlage) angezeigt.</p>
+          <p>Visualisiert die Tordifferenz aller Saisonspiele als Balkendiagramm. Die letzten 5 Ergebnisse werden als S/U/N-Badges (Sieg/Unentschieden/Niederlage) angezeigt.</p>
         </div>
-    </details>
+      </details>
 
-    <details>
-        <summary>Ballbesitz-Anzeige <span class="tag tag-new">Neu</span></summary>
+      <details>
+        <summary>Ballbesitz-Anzeige <span class="badge">Neu</span></summary>
         <div>
-            <p>In der Saison-KPI und im Archiv wird der kumulierte Ballbesitz über alle Spiele als visuelle Leiste angezeigt – Team vs. Gegner in Prozent.</p>
+          <p>In der Saison-KPI und im Archiv wird der kumulierte Ballbesitz über alle Spiele als visuelle Leiste angezeigt – Team vs. Gegner in Prozent.</p>
         </div>
-    </details>
+      </details>
 
-    <details>
-        <summary>Scout-Modus Einwechslungen <span class="tag tag-new">Neu</span></summary>
+      <details>
+        <summary>Scout-Modus Einwechslungen <span class="badge">Neu</span></summary>
         <div>
-            <p>Im Scout-Modus können jetzt Aus- und Einwechslungen erfasst werden. Spieler können vom Feld genommen und neue Spieler eingewechselt werden.</p>
+          <p>Im Scout-Modus können jetzt Aus- und Einwechslungen erfasst werden. Spieler können vom Feld genommen und neue Spieler eingewechselt werden.</p>
         </div>
-    </details>
+      </details>
 
-    <details>
-        <summary>Verbesserte iCloud-Synchronisation <span class="tag tag-improved">Verbessert</span></summary>
+      <details>
+        <summary>Verbesserte iCloud-Synchronisation <span class="badge">Verbessert</span></summary>
         <div>
-            <p>Neue Merge-before-Upload-Strategie: Vor dem Hochladen werden zuerst Cloud-Daten heruntergeladen und zusammengeführt, um Datenverluste zu vermeiden.</p>
+          <p>Neue Merge-before-Upload-Strategie: Vor dem Hochladen werden zuerst Cloud-Daten heruntergeladen und zusammengeführt, um Datenverluste zu vermeiden.</p>
         </div>
-    </details>
+      </details>
 
-    <details>
-        <summary>Notenvergabe & Auswechslungs-Feedback <span class="tag tag-improved">Verbessert</span></summary>
+      <details>
+        <summary>Notenvergabe & Auswechslungs-Feedback <span class="badge">Verbessert</span></summary>
         <div>
-            <p>Optimierte Berechnung der Endnoten und verbessertes visuelles Feedback bei Auswechslungen.</p>
+          <p>Optimierte Berechnung der Endnoten und verbessertes visuelles Feedback bei Auswechslungen.</p>
         </div>
-    </details>
+      </details>
 
-    <details>
-        <summary>Archiv-KPI & Codable-Decoder <span class="tag tag-fix">Fix</span></summary>
+      <details>
+        <summary>Archiv-KPI & Codable-Decoder <span class="badge">Fix</span></summary>
         <div>
-            <p>Neue ArchiveKPIView für Archiv-Statistiken. Rückwärtskompatible Decoder verhindern Datenverlust bei Updates.</p>
+          <p>Neue ArchiveKPIView für Archiv-Statistiken. Rückwärtskompatible Decoder verhindern Datenverlust bei Updates.</p>
         </div>
-    </details>
-</section>
+      </details>
+    </div>
 
-<!-- ==================== GRUNDLAGEN ==================== -->
-<section id="basics">
-    <h2><span class="emoji">📋</span>Grundlagen</h2>
+    <!-- ==================== GRUNDLAGEN ==================== -->
+    <div class="card" id="basics">
+      <h2>📋 Grundlagen</h2>
 
-    <h3>Team & Spieler erstellen</h3>
-    <p>Unter <strong>Team</strong> kannst du deinen Vereinsnamen und dein Logo festlegen. Spieler werden mit Name, Trikotnummer und Position(en) angelegt.</p>
+      <h3>Team & Spieler erstellen</h3>
+      <p>Unter <strong>Team</strong> kannst du deinen Vereinsnamen und dein Logo festlegen. Spieler werden mit Name, Trikotnummer und Position(en) angelegt.</p>
 
-    <h3>Verfügbarkeit & Disziplin</h3>
-    <p>Jeder Spieler hat einen Verfügbarkeitsstatus:</p>
-    <ul>
+      <h3>Verfügbarkeit & Disziplin</h3>
+      <p>Jeder Spieler hat einen Verfügbarkeitsstatus:</p>
+      <ul class="list">
         <li><strong>Verfügbar</strong> – spielbereit</li>
         <li><strong>Verletzt</strong> – wird bei Verletzungsereignissen automatisch gesetzt (optional)</li>
         <li><strong>Gesperrt</strong> – wird bei Roter Karte automatisch gesetzt (optional)</li>
         <li><strong>Nicht verfügbar</strong> – manuell gesetzt</li>
-    </ul>
+      </ul>
 
-    <h3>Disziplin-Einstellungen</h3>
-    <p>In den Einstellungen kannst du konfigurieren:</p>
-    <ul>
+      <h3>Disziplin-Einstellungen</h3>
+      <p>In den Einstellungen kannst du konfigurieren:</p>
+      <ul class="list">
         <li>Automatische Sperre nach Roter Karte</li>
         <li>Automatische Verletzungsmarkierung</li>
         <li>Gelbe-Karten-Schwelle (z.B. nach 5 Gelben = automatische Sperre)</li>
-    </ul>
+      </ul>
 
-    <h3>Kalender-Import</h3>
-    <p>Importiere Spielpläne über eine Kalender-URL (ICS-Format). Die App erkennt automatisch Gegner, Datum und Uhrzeit.</p>
-</section>
+      <h3>Kalender-Import</h3>
+      <p>Importiere Spielpläne über eine Kalender-URL (ICS-Format). Die App erkennt automatisch Gegner, Datum und Uhrzeit.</p>
+    </div>
 
-<!-- ==================== SPIELERFASSUNG ==================== -->
-<section id="match">
-    <h2><span class="emoji">⚽</span>Spielerfassung</h2>
+    <!-- ==================== SPIELERFASSUNG ==================== -->
+    <div class="card" id="match">
+      <h2>⚽ Spielerfassung</h2>
 
-    <h3>Neues Spiel erstellen</h3>
-    <p>Wähle den Modus, trage den Gegner ein, lege Heim/Auswärts fest und stelle deine Aufstellung zusammen.</p>
+      <h3>Neues Spiel erstellen</h3>
+      <p>Wähle den Modus, trage den Gegner ein, lege Heim/Auswärts fest und stelle deine Aufstellung zusammen.</p>
 
-    <details>
+      <details>
         <summary>Coach-Modus (Trainermodus)</summary>
         <div>
-            <p>Der volle Funktionsumfang für die eigene Mannschaft:</p>
-            <ul>
-                <li>Exakte Aufstellung mit 11 Spielern</li>
-                <li>Echtzeit-Ereigniserfassung mit Zeitstempel</li>
-                <li>Ballbesitz-Tracking (Team vs. Gegner)</li>
-                <li>Spielernoten auf der Schulnotenskala (1–6)</li>
-                <li>Feldpositionierung und Aufstellungsansicht</li>
-                <li>Auswechslungen über die Feldansicht</li>
-                <li>Timeline-basierte Spielanalyse</li>
-            </ul>
-            <div class="tip">
-                <strong>Tipp:</strong> Nutze den Coach-Modus für alle eigenen Spiele, bei denen du detaillierte Spielzeiten und Ballbesitzdaten benötigst.
-            </div>
+          <p>Der volle Funktionsumfang für die eigene Mannschaft:</p>
+          <ul class="list">
+            <li>Exakte Aufstellung mit 11 Spielern</li>
+            <li>Echtzeit-Ereigniserfassung mit Zeitstempel</li>
+            <li>Ballbesitz-Tracking (Team vs. Gegner)</li>
+            <li>Spielernoten auf der Schulnotenskala (1–6)</li>
+            <li>Feldpositionierung und Aufstellungsansicht</li>
+            <li>Auswechslungen über die Feldansicht</li>
+            <li>Timeline-basierte Spielanalyse</li>
+          </ul>
+          <p><strong>Tipp:</strong> Nutze den Coach-Modus für alle eigenen Spiele, bei denen du detaillierte Spielzeiten und Ballbesitzdaten benötigst.</p>
         </div>
-    </details>
+      </details>
 
-    <details>
+      <details>
         <summary>Scout-Modus (Beobachtungsmodus)</summary>
         <div>
-            <p>Flexibler Modus für die Spielerbeobachtung – eigene oder gegnerische Spieler:</p>
-            <ul>
-                <li>Flexible Spielerauswahl (ab 1 Spieler)</li>
-                <li>Alle Events erfassbar (Tore, Karten, Zweikämpfe, Pässe etc.)</li>
-                <li>Aus- und Einwechslungen erfassen</li>
-                <li>Spielernoten vergeben</li>
-                <li>Kein Timer nötig – Ballbesitz- und Zeitdaten entfallen</li>
-            </ul>
-            <div class="tip">
-                <strong>Tipp:</strong> Der Scout-Modus eignet sich sowohl für Gegnerbeobachtung als auch für Trainer, die nur einzelne Spieler beobachten möchten.
-            </div>
+          <p>Flexibler Modus für die Spielerbeobachtung – eigene oder gegnerische Spieler:</p>
+          <ul class="list">
+            <li>Flexible Spielerauswahl (ab 1 Spieler)</li>
+            <li>Alle Events erfassbar (Tore, Karten, Zweikämpfe, Pässe etc.)</li>
+            <li>Aus- und Einwechslungen erfassen</li>
+            <li>Spielernoten vergeben</li>
+            <li>Kein Timer nötig – Ballbesitz- und Zeitdaten entfallen</li>
+          </ul>
+          <p><strong>Tipp:</strong> Der Scout-Modus eignet sich sowohl für Gegnerbeobachtung als auch für Trainer, die nur einzelne Spieler beobachten möchten.</p>
         </div>
-    </details>
+      </details>
 
-    <h3>Über 20 Ereignistypen</h3>
-    <p>Während des Spiels kannst du folgende Events per Schnelltaste erfassen:</p>
-    <table>
+      <h3>Über 20 Ereignistypen</h3>
+      <p>Während des Spiels kannst du folgende Events per Schnelltaste erfassen:</p>
+      <table>
         <tr><th>Kategorie</th><th>Events</th></tr>
         <tr><td>Angriff</td><td>Tor, Vorlage, Schuss aufs Tor, Schuss daneben</td></tr>
         <tr><td>Passspiel</td><td>Pass erfolgreich, Pass fehl</td></tr>
@@ -353,26 +201,26 @@
         <tr><td>Disziplin</td><td>Foul, Foul erlitten, Gelbe/Rote Karte, Abseits</td></tr>
         <tr><td>Abwehr</td><td>Parade, Gegentor verursacht</td></tr>
         <tr><td>Sonstiges</td><td>Verletzung</td></tr>
-    </table>
-</section>
+      </table>
+    </div>
 
-<!-- ==================== STATISTIKEN ==================== -->
-<section id="stats">
-    <h2><span class="emoji">📊</span>Statistiken</h2>
+    <!-- ==================== STATISTIKEN ==================== -->
+    <div class="card" id="stats">
+      <h2>📊 Statistiken</h2>
 
-    <h3>Dashboard</h3>
-    <p>Dein Vereins-Cockpit mit allen wichtigen Informationen auf einen Blick:</p>
-    <ul>
+      <h3>Dashboard</h3>
+      <p>Dein Vereins-Cockpit mit allen wichtigen Informationen auf einen Blick:</p>
+      <ul class="list">
         <li>Nächstes anstehendes Spiel</li>
         <li>Saisonbilanz (Siege-Unentschieden-Niederlagen als Balken)</li>
         <li>6 KPI-Karten: Tore, Gegentore, Differenz, Ø-Note, Spiele, Zu-Null</li>
         <li>Aktuelle Form (letzte 5 Spiele)</li>
         <li>Bestbewerteter Spieler</li>
-    </ul>
+      </ul>
 
-    <h3>Saison-KPI</h3>
-    <p>Umfassende Saisonstatistiken über alle abgeschlossenen Spiele:</p>
-    <ul>
+      <h3>Saison-KPI</h3>
+      <p>Umfassende Saisonstatistiken über alle abgeschlossenen Spiele:</p>
+      <ul class="list">
         <li>Übersicht: Spiele, Bilanz, Tore, Differenz, Ø-Note, Zu-Null</li>
         <li><strong>Ballbesitz</strong>: Kumulierter Teamballbesitz vs. Gegner als visuelle Leiste</li>
         <li>Offensive: Tore, Vorlagen, Schüsse</li>
@@ -382,247 +230,252 @@
         <li>Disziplin: Fouls, Karten, Abseits</li>
         <li>Abwehr: Paraden, verursachte Gegentore</li>
         <li>Verletzungen: Gesamt und aktuell verletzte Spieler</li>
-    </ul>
+      </ul>
 
-    <h3>Spielerstatistiken</h3>
-    <p>Für jeden Spieler gibt es ein ausführliches Profil mit:</p>
-    <ul>
+      <h3>Spielerstatistiken</h3>
+      <p>Für jeden Spieler gibt es ein ausführliches Profil mit:</p>
+      <ul class="list">
         <li>Gesamtnote mit farblicher Bewertung</li>
         <li>Notenhistorie über alle Spiele (scrollbare Karten)</li>
         <li>Alle Saison-Statistiken nach Kategorien</li>
         <li>Einsatzzeiten und Spielminuten</li>
-    </ul>
+      </ul>
 
-    <h3>Spieldetails & Timeline</h3>
-    <p>Nach jedem Spiel siehst du eine chronologische Timeline aller Ereignisse mit Zeitstempel, Spielerinfos und Spielstand-Verlauf.</p>
-</section>
+      <h3>Spieldetails & Timeline</h3>
+      <p>Nach jedem Spiel siehst du eine chronologische Timeline aller Ereignisse mit Zeitstempel, Spielerinfos und Spielstand-Verlauf.</p>
+    </div>
 
-<!-- ==================== TRENDS & COACHING ==================== -->
-<section id="trends">
-    <h2><span class="emoji">📈</span>Trends & Coaching-Analyse</h2>
+    <!-- ==================== TRENDS & COACHING ==================== -->
+    <div class="card" id="trends">
+      <h2>📈 Trends & Coaching-Analyse</h2>
 
-    <h3>Teamform-Diagramm</h3>
-    <p>Balkendiagramm der Tordifferenz aller Saisonspiele. Die letzten 5 Spiele werden als farbige S/U/N-Badges angezeigt (Grün = Sieg, Orange = Unentschieden, Rot = Niederlage).</p>
-    <p>Das Diagramm wird im Scout-Filter ausgeblendet, da es sich auf die eigene Teamleistung bezieht.</p>
+      <h3>Teamform-Diagramm</h3>
+      <p>Balkendiagramm der Tordifferenz aller Saisonspiele. Die letzten 5 Spiele werden als farbige S/U/N-Badges angezeigt (Grün = Sieg, Orange = Unentschieden, Rot = Niederlage).</p>
+      <p>Das Diagramm wird im Scout-Filter ausgeblendet, da es sich auf die eigene Teamleistung bezieht.</p>
 
-    <h3>Coaching-Analyse (21 Insights)</h3>
-    <p>Die App analysiert automatisch die letzten 5 Spiele und generiert datenbasierte Handlungsempfehlungen. Warnungen werden vor positiven Insights angezeigt.</p>
+      <h3>Coaching-Analyse (21 Insights)</h3>
+      <p>Die App analysiert automatisch die letzten 5 Spiele und generiert datenbasierte Handlungsempfehlungen. Warnungen werden vor positiven Insights angezeigt.</p>
 
-    <h3>Analyse-Filter</h3>
-    <p>Über den Segmented Picker kannst du die Analysen filtern:</p>
+      <h3>Analyse-Filter</h3>
+      <p>Über den Segmented Picker kannst du die Analysen filtern:</p>
 
-    <table>
+      <table>
         <tr><th>Filter</th><th>Beschreibung</th><th>Insights</th></tr>
         <tr>
-            <td><strong>Alle</strong></td>
-            <td>Alle Spiele – ideal für Trainer, die sowohl den Coach-Modus als auch den Scout-Modus zur Einzelspielerbeobachtung nutzen.</td>
-            <td>21</td>
+          <td><strong>Alle</strong></td>
+          <td>Alle Spiele – ideal für Trainer, die sowohl den Coach-Modus als auch den Scout-Modus zur Einzelspielerbeobachtung nutzen.</td>
+          <td>21</td>
         </tr>
         <tr>
-            <td><strong>Coach</strong></td>
-            <td>Nur Coach-Spiele – zeigt alle Analysen inkl. Ballbesitz, Spielzeiten und Bewertungen.</td>
-            <td>19</td>
+          <td><strong>Coach</strong></td>
+          <td>Nur Coach-Spiele – zeigt alle Analysen inkl. Ballbesitz, Spielzeiten und Bewertungen.</td>
+          <td>19</td>
         </tr>
         <tr>
-            <td><strong>Scout</strong></td>
-            <td>Nur Scout-Spiele – zeigt Analysen zu Ergebnissen, Events und Leistungsdaten ohne Timer-abhängige Werte.</td>
-            <td>10</td>
+          <td><strong>Scout</strong></td>
+          <td>Nur Scout-Spiele – zeigt Analysen zu Ergebnissen, Events und Leistungsdaten ohne Timer-abhängige Werte.</td>
+          <td>10</td>
         </tr>
-    </table>
+      </table>
 
-    <h3>Alle 21 Analysen im Überblick</h3>
+      <h3>Alle 21 Analysen im Überblick</h3>
 
-    <details>
+      <details>
         <summary>Analysen für alle Filter (Coach + Scout)</summary>
         <div>
-            <table>
-                <tr><th>Analyse</th><th>Auslöser</th></tr>
-                <tr><td>⭐ Bester Spieler</td><td>Spieler mit bester Ø-Note (mind. 2 Spiele)</td></tr>
-                <tr><td>⚽ Torjäger</td><td>Spieler mit den meisten Toren (mind. 2)</td></tr>
-                <tr><td>🟡 Foulspiel reduzieren</td><td>Ø 5+ Fouls pro Spiel</td></tr>
-                <tr><td>❌ Torflaute</td><td>Weniger als 1 Tor pro Spiel (mind. 3 Spiele)</td></tr>
-                <tr><td>⬇ef</td><td>Spieler mit Ø-Note schlechter als 4.0</td></tr>
-                <tr><td>✅ Starkes Passspiel</td><td>Passquote 75%+ / ❌ Schwach bei unter 55%</td></tr>
-                <tr><td>🛡️ Zweikampfstark</td><td>Zweikampfquote 60%+ / ❌ Schwach bei unter 40%</td></tr>
-                <tr><td>🎯 Schlüsselspieler</td><td>Spieler mit den meisten Vorlagen (mind. 2)</td></tr>
-                <tr><td>🏥 Verletzungsanfällig</td><td>Spieler mit 2+ Verletzungen in den letzten Spielen</td></tr>
-            </table>
+          <table>
+            <tr><th>Analyse</th><th>Auslöser</th></tr>
+            <tr><td>⭐ Bester Spieler</td><td>Spieler mit bester Ø-Note (mind. 2 Spiele)</td></tr>
+            <tr><td>⚽ Torjäger</td><td>Spieler mit den meisten Toren (mind. 2)</td></tr>
+            <tr><td>🟡 Foulspiel reduzieren</td><td>Ø 5+ Fouls pro Spiel</td></tr>
+            <tr><td>❌ Torflaute</td><td>Weniger als 1 Tor pro Spiel (mind. 3 Spiele)</td></tr>
+            <tr><td>⬇️ Formtief</td><td>Spieler mit Ø-Note schlechter als 4.0</td></tr>
+            <tr><td>✅ Starkes Passspiel</td><td>Passquote 75%+ / ❌ Schwach bei unter 55%</td></tr>
+            <tr><td>🛡️ Zweikampfstark</td><td>Zweikampfquote 60%+ / ❌ Schwach bei unter 40%</td></tr>
+            <tr><td>🎯 Schlüsselspieler</td><td>Spieler mit den meisten Vorlagen (mind. 2)</td></tr>
+            <tr><td>🏥 Verletzungsanfällig</td><td>Spieler mit 2+ Verletzungen in den letzten Spielen</td></tr>
+          </table>
         </div>
-    </details>
+      </details>
 
-    <details>
+      <details>
         <summary>Analysen nur im Coach-Filter</summary>
         <div>
-            <table>
-                <tr><th>Analyse</th><th>Auslöser</th></tr>
-                <tr><td>🟨 Disziplin beachten</td><td>3+ Karten-Punkte (Gelb=1, Rot=3)</td></tr>
-                <tr><td>🏥 Verletzungstrend</td><td>2+ Verletzungen oder 2+ verletzte Spieler</td></tr>
-                <tr><td>🛡️ Defensive stärken</td><td>Ø 2+ Gegentore pro Spiel</td></tr>
-                <tr><td>🔒 Starke Defensive</td><td>2+ Zu-Null-Spiele</td></tr>
-                <tr><td>🔥 Siegesserie</td><td>Alle letzten Spiele gewonnen (mind. 3)</td></tr>
-                <tr><td>⚠️ Negativserie</td><td>Alle letzten Spiele verloren (mind. 3)</td></tr>
-                <tr><td>⚽ Ballbesitz-Trend</td><td>Steigend/sinkend (8%+ Shift) oder dominant/schwach</td></tr>
-                <tr><td>🏠 Heim/Auswärts</td><td>Heim- oder Auswärtsstärke/-schwäche erkennen</td></tr>
-                <tr><td>⏱️ Späte Gegentore</td><td>Mehr als 2× so viele Gegentore in der 2. Halbzeit</td></tr>
-                <tr><td>🔄 Keine Rotation</td><td>Identische Startelf in 3+ Spielen</td></tr>
-                <tr><td>🃏 Super Sub</td><td>Einwechselspieler mit Ø-Note besser als 2.5</td></tr>
-            </table>
+          <table>
+            <tr><th>Analyse</th><th>Auslöser</th></tr>
+            <tr><td>🟨 Disziplin beachten</td><td>3+ Karten-Punkte (Gelb=1, Rot=3)</td></tr>
+            <tr><td>🏥 Verletzungstrend</td><td>2+ Verletzungen oder 2+ verletzte Spieler</td></tr>
+            <tr><td>🛡️ Defensive stärken</td><td>Ø 2+ Gegentore pro Spiel</td></tr>
+            <tr><td>🔒 Starke Defensive</td><td>2+ Zu-Null-Spiele</td></tr>
+            <tr><td>🔥 Siegesserie</td><td>Alle letzten Spiele gewonnen (mind. 3)</td></tr>
+            <tr><td>⚠️ Negativserie</td><td>Alle letzten Spiele verloren (mind. 3)</td></tr>
+            <tr><td>⚽ Ballbesitz-Trend</td><td>Steigend/sinkend (8%+ Shift) oder dominant/schwach</td></tr>
+            <tr><td>🏠 Heim/Auswärts</td><td>Heim- oder Auswärtsstärke/-schwäche erkennen</td></tr>
+            <tr><td>⏱️ Späte Gegentore</td><td>Mehr als 2× so viele Gegentore in der 2. Halbzeit</td></tr>
+            <tr><td>🔄 Keine Rotation</td><td>Identische Startelf in 3+ Spielen</td></tr>
+            <tr><td>🃏 Super Sub</td><td>Einwechselspieler mit Ø-Note besser als 2.5</td></tr>
+          </table>
         </div>
-    </details>
+      </details>
 
-    <details>
+      <details>
         <summary>Analysen nur im Scout-Filter</summary>
         <div>
-            <table>
-                <tr><th>Analyse</th><th>Auslöser</th></tr>
-                <tr><td>👤 Häufig fehlende Spieler</td><td>Spieler die in mehr als der Hälfte der Spiele fehlen – mögliche Verletzung oder Sperre</td></tr>
-            </table>
+          <table>
+            <tr><th>Analyse</th><th>Auslöser</th></tr>
+            <tr><td>👤 Häufig fehlende Spieler</td><td>Spieler die in mehr als der Hälfte der Spiele fehlen – mögliche Verletzung oder Sperre</td></tr>
+          </table>
         </div>
-    </details>
+      </details>
 
-    <h3>Spielervergleich</h3>
-    <p>Wähle zwei Spieler aus und vergleiche sie direkt:</p>
-    <ul>
+      <h3>Spielervergleich</h3>
+      <p>Wähle zwei Spieler aus und vergleiche sie direkt:</p>
+      <ul class="list">
         <li>Note, Spiele, Minuten, Tore, Vorlagen</li>
         <li>Schüsse aufs Tor, erfolgreiche Pässe, Zweikämpfe</li>
         <li>Gelbe & Rote Karten</li>
         <li>Notenvergleichs-Diagramm über die gesamte Saison</li>
-    </ul>
-    <p>Der bessere Wert wird jeweils grün hervorgehoben.</p>
-</section>
+      </ul>
+      <p>Der bessere Wert wird jeweils grün hervorgehoben.</p>
+    </div>
 
-<!-- ==================== ARCHIV ==================== -->
-<section id="archive">
-    <h2><span class="emoji">🗂️</span>Archiv</h2>
+    <!-- ==================== ARCHIV ==================== -->
+    <div class="card" id="archive">
+      <h2>🗂️ Archiv</h2>
 
-    <h3>Spiele archivieren</h3>
-    <p>Verschiebe abgeschlossene Spiele in benannte Archivordner (z.B. "Hinrunde 2024"). Du kannst einen neuen Ordner erstellen oder einen bestehenden wählen. Mehrere Spiele können gleichzeitig archiviert werden.</p>
+      <h3>Spiele archivieren</h3>
+      <p>Verschiebe abgeschlossene Spiele in benannte Archivordner (z.B. "Hinrunde 2024"). Du kannst einen neuen Ordner erstellen oder einen bestehenden wählen. Mehrere Spiele können gleichzeitig archiviert werden.</p>
 
-    <h3>Archiv-Statistiken</h3>
-    <p>Jeder Archivordner bietet eigene KPI-Statistiken:</p>
-    <ul>
+      <h3>Archiv-Statistiken</h3>
+      <p>Jeder Archivordner bietet eigene KPI-Statistiken:</p>
+      <ul class="list">
         <li>Saisonbilanz und alle Kennzahlen des archivierten Zeitraums</li>
         <li>Kumulierter Ballbesitz</li>
         <li>Spielerstatistiken innerhalb des Archivs</li>
         <li>Spielerliste mit archivspezifischen Noten</li>
-    </ul>
+      </ul>
 
-    <h3>Spiele wiederherstellen</h3>
-    <p>Per Swipe nach links kannst du einzelne Spiele aus dem Archiv zurück in die aktuelle Saison verschieben.</p>
-</section>
+      <h3>Spiele wiederherstellen</h3>
+      <p>Per Swipe nach links kannst du einzelne Spiele aus dem Archiv zurück in die aktuelle Saison verschieben.</p>
+    </div>
 
-<!-- ==================== PDF EXPORT ==================== -->
-<section id="pdf">
-    <h2><span class="emoji">📄</span>PDF-Saisonbericht</h2>
+    <!-- ==================== PDF EXPORT ==================== -->
+    <div class="card" id="pdf">
+      <h2>📄 PDF-Saisonbericht</h2>
 
-    <p>Erstelle einen professionellen A4-Bericht deiner Saison zum Teilen oder Drucken.</p>
+      <p>Erstelle einen professionellen A4-Bericht deiner Saison zum Teilen oder Drucken.</p>
 
-    <h3>Inhalt des Berichts</h3>
-    <ul>
+      <h3>Inhalt des Berichts</h3>
+      <ul class="list">
         <li><strong>Deckblatt:</strong> Vereinslogo, Name, Datum</li>
         <li><strong>Saisonübersicht:</strong> Spielzahl, Bilanz, Tore, Gegentore, Differenz, Ø-Tore pro Spiel, Torschützenkönig, Vorlagenkönig</li>
         <li><strong>Spielerseiten:</strong> Individuelle Statistikseiten für jeden Spieler mit Note, allen Saison-Events und Einsatzdaten</li>
-    </ul>
+      </ul>
 
-    <div class="tip">
-        <strong>Tipp:</strong> Den PDF-Export findest du unter <strong>Spiele → PDF-Button</strong> in der oberen Leiste.
-    </div>
-</section>
-
-<!-- ==================== iCLOUD ==================== -->
-<section id="icloud">
-    <h2><span class="emoji">☁>iCloud-Synchronisation</h2>
-
-    <h3>Einrichtung</h3>
-    <p>In den Einstellungen kannst du zwischen Offline (nur lokal) und iCloud wechseln. Bei aktiviertem iCloud werden deine Daten automatisch in die Cloud gesichert.</p>
-
-    <h3>Manuelle Synchronisation</h3>
-    <p>Über den "Jetzt synchronisieren"-Button wird ein manueller Upload ausgelöst. Dabei werden zuerst Cloud-Daten heruntergeladen und mit lokalen Daten zusammengeführt (Merge-Strategie), um Datenverluste zu vermeiden.</p>
-
-    <div class="warning">
-        <strong>Hinweis:</strong> iCloud muss auf dem Gerät aktiviert und der iCloud-Speicher ausreichend sein. Bei fehlender Verfügbarkeit zeigt die App eine entsprechende Meldung an.
+      <p><strong>Tipp:</strong> Den PDF-Export findest du unter <strong>Spiele → PDF-Button</strong> in der oberen Leiste.</p>
     </div>
 
-    <h3>Kalender-Integration</h3>
-    <p>Importiere Spielpläne über eine Kalender-Abo-URL (ICS-Format). Die App erkennt Gegner, Datum und Uhrzeit automatisch und erstellt die Spiele für dich.</p>
-</section>
+    <!-- ==================== iCLOUD ==================== -->
+    <div class="card" id="icloud">
+      <h2>☁️ iCloud-Synchronisation</h2>
 
-<!-- ==================== FAQ ==================== -->
-<section id="faq">
-    <h2><span class="emoji">❓</span>Häufige Fragen</h2>
+      <h3>Einrichtung</h3>
+      <p>In den Einstellungen kannst du zwischen Offline (nur lokal) und iCloud wechseln. Bei aktiviertem iCloud werden deine Daten automatisch in die Cloud gesichert.</p>
 
-    <details>
+      <h3>Manuelle Synchronisation</h3>
+      <p>Über den "Jetzt synchronisieren"-Button wird ein manueller Upload ausgelöst. Dabei werden zuerst Cloud-Daten heruntergeladen und mit lokalen Daten zusammengeführt (Merge-Strategie), um Datenverluste zu vermeiden.</p>
+
+      <p><strong>Hinweis:</strong> iCloud muss auf dem Gerät aktiviert und der iCloud-Speicher ausreichend sein. Bei fehlender Verfügbarkeit zeigt die App eine entsprechende Meldung an.</p>
+
+      <h3>Kalender-Integration</h3>
+      <p>Importiere Spielpläne über eine Kalender-Abo-URL (ICS-Format). Die App erkennt Gegner, Datum und Uhrzeit automatisch und erstellt die Spiele für dich.</p>
+    </div>
+
+    <!-- ==================== FAQ ==================== -->
+    <div class="card" id="faq">
+      <h2>❓ Häufige Fragen</h2>
+
+      <details>
         <summary>Was passiert wenn ich einen Spieler lösche?</summary>
         <div><p>Beim Löschen eines Spielers wird eine Warnung angezeigt, die zeigt wie viele Spiele betroffen sind. Die Spielstatistiken des gelöschten Spielers bleiben in den bereits abgeschlossenen Spielen erhalten.</p></div>
-    </details>
+      </details>
 
-    <details>
+      <details>
         <summary>Wie funktioniert der Ballbesitz?</summary>
         <div><p>Im Coach-Modus wird die Ballbesitzzeit in Sekunden gemessen – für dein Team und den Gegner getrennt. Die Prozentwerte werden automatisch berechnet. Im Scout-Modus steht kein Timer zur Verfügung, daher entfällt die Ballbesitzerfassung.</p></div>
-    </details>
+      </details>
 
-    <details>
+      <details>
         <summary>Was bedeuten die Noten 1–6?</summary>
         <div>
-            <p>Die App nutzt die deutsche Schulnotenskala:</p>
-            <ul>
-                <li><strong>1.0 – 1.5:</strong> Herausragend (grün)</li>
-                <li><strong>1.6 – 2.5:</strong> Gut (grün)</li>
-                <li><strong>2.6 – 3.5:</strong> Befriedigend (orange)</li>
-                <li><strong>3.6 – 4.5:</strong> Ausreichend (orange)</li>
-                <li><strong>4.6 – 6.0:</strong> Mangelhaft bis ungenügend (rot)</li>
-            </ul>
+          <p>Die App nutzt die deutsche Schulnotenskala:</p>
+          <ul class="list">
+            <li><strong>1.0 – 1.5:</strong> Herausragend (grün)</li>
+            <li><strong>1.6 – 2.5:</strong> Gut (grün)</li>
+            <li><strong>2.6 – 3.5:</strong> Befriedigend (orange)</li>
+            <li><strong>3.6 – 4.5:</strong> Ausreichend (orange)</li>
+            <li><strong>4.6 – 6.0:</strong> Mangelhaft bis ungenügend (rot)</li>
+          </ul>
         </div>
-    </details>
+      </details>
 
-    <details>
+      <details>
         <summary>Funktioniert die App auch offline?</summary>
         <div><p>Ja. Alle Funktionen arbeiten vollständig offline. Die iCloud-Synchronisation ist optional und dient nur als Backup bzw. zur Geräte-Übergreifenden Nutzung.</p></div>
-    </details>
+      </details>
 
-    <details>
+      <details>
         <summary>Was ist der Unterschied zwischen Coach und Scout?</summary>
         <div>
-            <p><strong>Coach-Modus:</strong> Voller Funktionsumfang mit Timer, Ballbesitz, Feldpositionierung und exakter Aufstellung (11 Spieler). Für die eigene Mannschaft.</p>
-            <p><strong>Scout-Modus:</strong> Flexibel, ohne Timer. Ideal für Gegnerbeobachtung oder wenn man nur einzelne Spieler beobachten will. Alle Events und Noten können trotzdem erfasst werden.</p>
+          <p><strong>Coach-Modus:</strong> Voller Funktionsumfang mit Timer, Ballbesitz, Feldpositionierung und exakter Aufstellung (11 Spieler). Für die eigene Mannschaft.</p>
+          <p><strong>Scout-Modus:</strong> Flexibel, ohne Timer. Ideal für Gegnerbeobachtung oder wenn man nur einzelne Spieler beobachten will. Alle Events und Noten können trotzdem erfasst werden.</p>
         </div>
-    </details>
+      </details>
 
-    <details>
+      <details>
         <summary>Wann nutze ich welchen Analyse-Filter?</summary>
         <div>
-            <p><strong>Alle:</strong> Du bist Trainer und nutzt beide Modi – z.B. Coach für eigene Spiele und Scout für Einzelspielerbeobachtung. Du siehst alle 21 Analysen.</p>
-            <p><strong>Coach:</strong> Du willst nur die Coach-Spiele analysieren. Zeigt 19 Analysen inkl. Ballbesitz, Spielzeiten und Aufstellungs-Insights.</p>
-            <p><strong>Scout:</strong> Du willst nur die Scout-Spiele analysieren. Zeigt 10 Analysen – fokussiert auf Ergebnisse, Events und spielerbezogene Daten.</p>
+          <p><strong>Alle:</strong> Du bist Trainer und nutzt beide Modi – z.B. Coach für eigene Spiele und Scout für Einzelspielerbeobachtung. Du siehst alle 21 Analysen.</p>
+          <p><strong>Coach:</strong> Du willst nur die Coach-Spiele analysieren. Zeigt 19 Analysen inkl. Ballbesitz, Spielzeiten und Aufstellungs-Insights.</p>
+          <p><strong>Scout:</strong> Du willst nur die Scout-Spiele analysieren. Zeigt 10 Analysen – fokussiert auf Ergebnisse, Events und spielerbezogene Daten.</p>
         </div>
-    </details>
+      </details>
 
-    <details>
+      <details>
         <summary>Welche Analysen sehe ich im Scout-Filter?</summary>
         <div>
-            <p>Im Scout-Filter siehst du: Bester Spieler, Torjäger, Foulspiel, Torflaute, Formtief, Passspiel, Zweikämpfe, Schlüsselspieler, Verletzungsanfälligkeit und häufig fehlende Spieler.</p>
-            <p>Ausgeblendet werden Analysen die Timer-Daten (Ballbesitz, späte Gegentore), Aufstellungs-Management (Rotation, Super Sub) oder mannschaftsspezifische Daten (Defensive, Heim/Auswärts, Serien) benötigen.</p>
+          <p>Im Scout-Filter siehst du: Bester Spieler, Torjäger, Foulspiel, Torflaute, Formtief, Passspiel, Zweikämpfe, Schlüsselspieler, Verletzungsanfälligkeit und häufig fehlende Spieler.</p>
+          <p>Ausgeblendet werden Analysen die Timer-Daten (Ballbesitz, späte Gegentore), Aufstellungs-Management (Rotation, Super Sub) oder mannschaftsspezifische Daten (Defensive, Heim/Auswärts, Serien) benötigen.</p>
         </div>
-    </details>
+      </details>
 
-    <details>
+      <details>
         <summary>Kann ich archivierte Spiele zurückholen?</summary>
         <div><p>Ja. In jedem Archivordner kannst du einzelne Spiele per Swipe nach links zurück in die aktuelle Saison verschieben.</p></div>
-    </details>
+      </details>
 
-    <details>
+      <details>
         <summary>Gehen meine Daten bei einem Update verloren?</summary>
         <div><p>Nein. Die App verwendet rückwärtskompatible Decoder, die sicherstellen, dass alle Daten auch nach einem Update erhalten bleiben.</p></div>
-    </details>
-</section>
+      </details>
+    </div>
 
-<!-- ==================== KONTAKT ==================== -->
-<div class="contact">
-    <p>Fragen oder Feedback?</p>
-    <p><a href="mailto:playlytics.app@gmail.com">playlytics.app@gmail.com</a></p>
-    <br>
-    <p style="font-size: 12px; color: var(--secondary);">Playlytics v1.0.6 · Made with ❤️ for Amateurfußball</p>
-</div>
+    <!-- Kontakt -->
+    <div class="card">
+      <h2>Kontakt</h2>
+      <p>Bei Fragen oder Feedback erreichst du uns unter:</p>
+      <div class="mt-12">
+        <a class="btn primary" href="mailto:playlyticsdev@gmail.com"><span class="icon">✉️</span>playlyticsdev@gmail.com</a>
+      </div>
+    </div>
 
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Playlytics DEV · <a href="./datenschutz.html">Datenschutz</a></p>
+    </div>
+  </footer>
 </body>
 </html>
