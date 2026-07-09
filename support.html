@@ -24,7 +24,7 @@
   <!-- Hero -->
   <section class="hero">
     <div class="container">
-      <div class="badge">v1.1.2</div>
+      <div class="badge">v1.1.3</div>
       <h1>Support & Hilfe</h1>
       <p class="m-0">Live-Analyse für Amateurfußball</p>
     </div>
@@ -32,7 +32,7 @@
 
   <!-- Inhaltsnavigation -->
   <nav class="container section" style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;">
-    <a class="btn" href="#new">Neu in 1.1.2</a>
+    <a class="btn" href="#new">Neu in 1.1.3</a>
     <a class="btn" href="#basics">Grundlagen</a>
     <a class="btn" href="#match">Spielerfassung</a>
     <a class="btn" href="#stats">Statistiken</a>
@@ -46,49 +46,60 @@
   <!-- Inhalt -->
   <main class="container section">
 
-    <!-- ==================== NEU IN 1.1.2 ==================== -->
+    <!-- ==================== NEU IN 1.1.3 ==================== -->
     <div class="card" id="new">
-      <h2>🆕 Neu in Version 1.1.2</h2>
+      <h2>🆕 Neu in Version 1.1.3</h2>
 
       <details>
-        <summary>Status-Filter für Spiele <span class="badge">Neu</span></summary>
+        <summary>Spiele vorplanen <span class="badge">Neu</span></summary>
         <div>
-          <p>In der Spieleübersicht kannst du jetzt nach Spielstatus filtern: <strong>Alle</strong>, <strong>Abgeschlossen</strong> oder <strong>Offen</strong>. So findest du importierte oder noch nicht gestartete Spiele auf einen Blick.</p>
+          <p>Spiele können jetzt im Voraus geplant werden – mit Datum, Gegner und vorgespeicherter Aufstellung. Am Spieltag startest du das geplante Spiel mit einem Klick, die Aufstellung ist bereits geladen.</p>
+          <ul class="list">
+            <li><strong>Planen:</strong> Beim Erstellen eines Spiels auf „Spiel planen" tippen, Datum wählen und bestätigen</li>
+            <li><strong>Starten:</strong> In der Spieleübersicht oder im Dashboard auf das geplante Spiel tippen → „Spiel starten"</li>
+            <li><strong>Bearbeiten:</strong> Gegner, Datum und Aufstellung jederzeit vor dem Spielstart ändern</li>
+            <li><strong>Löschen:</strong> Plan entfernen – das Spiel wird auf „Offen" zurückgesetzt</li>
+          </ul>
         </div>
       </details>
 
       <details>
-        <summary>Chronologische Sortierung <span class="badge">Neu</span></summary>
+        <summary>Importierte Spiele planen <span class="badge">Neu</span></summary>
         <div>
-          <p>Spiele werden jetzt überall chronologisch sortiert – das erste Spiel der Saison steht oben, das neueste unten. Gilt für die Spieleübersicht, die Archivansicht und die Archivierungsliste.</p>
+          <p>Per Kalender importierte Spiele können jetzt direkt mit einer Aufstellung geplant werden. Beim Planen stehen drei Optionen zur Wahl:</p>
+          <ul class="list">
+            <li><strong>Datum beibehalten:</strong> Aufstellung planen, Kalender-Datum übernehmen</li>
+            <li><strong>Datum ändern:</strong> Eigenes Datum wählen</li>
+            <li><strong>Datum ändern & Aufstellung planen:</strong> Datum anpassen und direkt die Aufstellung bearbeiten</li>
+          </ul>
         </div>
       </details>
 
       <details>
-        <summary>Ballbesitz pausieren <span class="badge">Neu</span></summary>
+        <summary>Filter „Geplant" in der Spieleübersicht <span class="badge">Neu</span></summary>
         <div>
-          <p>Der Ballbesitz kann jetzt während des Spiels pausiert werden, z.B. bei Spielunterbrechungen. Zusätzlich wird „Nicht erfasst" als Option angezeigt, wenn kein Ballbesitz gemessen wurde.</p>
+          <p>Neben „Alle", „Abgeschlossen" und „Offen" gibt es jetzt den Filter <strong>„Geplant"</strong>, der nur geplante Spiele anzeigt. Geplante Spiele werden mit einem „Geplant"-Badge gekennzeichnet.</p>
         </div>
       </details>
 
       <details>
-        <summary>Aufstellung im Spiel ändern <span class="badge">Neu</span></summary>
+        <summary>Geplante Spiele im Dashboard <span class="badge">Neu</span></summary>
         <div>
-          <p>Die Aufstellung kann jetzt auch während eines laufenden Spiels angepasst werden – ideal für nachträgliche Korrekturen oder Positionswechsel.</p>
+          <p>Geplante Spiele erscheinen auf dem Dashboard als „Nächstes Spiel" mit „Geplant"-Badge. Per Tap öffnet sich ein Dialog mit den Optionen „Spiel starten", „Plan bearbeiten" oder „Plan löschen".</p>
         </div>
       </details>
 
       <details>
-        <summary>Erweiterter Spielervergleich <span class="badge">Verbessert</span></summary>
+        <summary>Kader-Warnung bei geplanten Spielen <span class="badge">Neu</span></summary>
         <div>
-          <p>Der Spielervergleich zeigt jetzt alle erfassten Ereignistypen – nicht nur die Basis-Events. So werden auch Standards, Kopfbälle und Verletzungen verglichen.</p>
+          <p>Wenn sich der Kader nach der Planung geändert hat (z.B. ein Spieler wurde entfernt), zeigt die Spieleübersicht ein oranges Warnsymbol neben dem geplanten Spiel an.</p>
         </div>
       </details>
 
       <details>
-        <summary>Letzte Aufstellung übernehmen <span class="badge">Neu</span></summary>
+        <summary>Kalender-Reimport schützt geplante Spiele <span class="badge">Verbessert</span></summary>
         <div>
-          <p>Beim Erstellen eines neuen Spiels kann die Aufstellung des letzten Spiels mit einem Tap übernommen werden – spart Zeit bei gleichbleibendem Kader.</p>
+          <p>Beim erneuten Kalender-Import werden bereits geplante Spiele nicht mehr überschrieben. Die Anzahl übersprungener Spiele wird im Import-Ergebnis angezeigt.</p>
         </div>
       </details>
     </div>
@@ -96,6 +107,20 @@
     <!-- ==================== ÄLTERE VERSIONEN ==================== -->
     <div class="card">
       <h2>📦 Ältere Versionen</h2>
+
+      <details>
+        <summary><strong>Version 1.1.2</strong></summary>
+        <div>
+          <ul class="list">
+            <li><strong>Status-Filter</strong> – Spieleübersicht nach Alle/Abgeschlossen/Offen filtern</li>
+            <li><strong>Chronologische Sortierung</strong> – Spiele aufsteigend nach Datum sortiert</li>
+            <li><strong>Ballbesitz pausieren</strong> – Ballbesitz bei Spielunterbrechungen pausieren</li>
+            <li><strong>Aufstellung im Spiel ändern</strong> – Aufstellung auch während eines laufenden Spiels anpassbar</li>
+            <li><strong>Erweiterter Spielervergleich</strong> – Alle Ereignistypen im Vergleich sichtbar</li>
+            <li><strong>Letzte Aufstellung übernehmen</strong> – Aufstellung des letzten Spiels mit einem Tap laden</li>
+          </ul>
+        </div>
+      </details>
 
       <details>
         <summary><strong>Version 1.1.0</strong></summary>
@@ -298,7 +323,7 @@
             <tr><td>⚽ Torjäger</td><td>Spieler mit den meisten Toren (mind. 2)</td></tr>
             <tr><td>🟡 Foulspiel reduzieren</td><td>Ø 5+ Fouls pro Spiel</td></tr>
             <tr><td>❌ Torflaute</td><td>Weniger als 1 Tor pro Spiel (mind. 3 Spiele)</td></tr>
-            <tr><td>⬇️ Formtief</td><td>Spieler mit Ø-Note schlechter als 4.0</td></tr>
+            <tr><td>⬇.0</td></tr>
             <tr><td>✅ Starkes Passspiel</td><td>Passquote 75%+ / ❌ Schwach bei unter 55%</td></tr>
             <tr><td>🛡️ Zweikampfstark</td><td>Zweikampfquote 60%+ / ❌ Schwach bei unter 40%</td></tr>
             <tr><td>🎯 Schlüsselspieler</td><td>Spieler mit den meisten Vorlagen (mind. 2)</td></tr>
@@ -463,6 +488,19 @@
           <p>Im Scout-Filter siehst du: Bester Spieler, Torjäger, Foulspiel, Torflaute, Formtief, Passspiel, Zweikämpfe, Schlüsselspieler, Verletzungsanfälligkeit und häufig fehlende Spieler.</p>
           <p>Ausgeblendet werden Analysen die Timer-Daten (Ballbesitz, späte Gegentore), Aufstellungs-Management (Rotation, Super Sub) oder mannschaftsspezifische Daten (Defensive, Heim/Auswärts, Serien) benötigen.</p>
         </div>
+      </details>
+
+      <details>
+        <summary>Wie funktioniert die Spielplanung?</summary>
+        <div>
+          <p>Unter „Neues Spiel" kannst du neben „Zum Spiel" auch „Spiel planen" wählen. Du wählst Gegner, Aufstellung und Datum – das Spiel wird gespeichert, aber noch nicht gestartet. Am Spieltag tippst du in der Spieleübersicht oder im Dashboard auf das geplante Spiel und wählst „Spiel starten". Die Aufstellung ist dann bereits geladen.</p>
+          <p>Importierte Spiele können ebenfalls geplant werden – über den „Aufstellung planen"-Button in der Spieleübersicht.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Was passiert wenn ich einen Plan lösche?</summary>
+        <div><p>Beim Löschen eines Plans wird nur die geplante Aufstellung und das Datum entfernt. Das Spiel selbst bleibt erhalten und wird auf den Status „Offen" zurückgesetzt. Bei importierten Spielen wird der Reimport wieder ermöglicht. Um ein Spiel komplett zu löschen, nutze die Swipe-Aktion in der Spieleübersicht.</p></div>
       </details>
 
       <details>
